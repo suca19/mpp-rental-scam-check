@@ -1,0 +1,112 @@
+[
+  {
+    "id": "deposit_before_viewing",
+    "severity": "high",
+    "detection": "text",
+    "description": "Asks for a deposit or first month's rent before you have viewed the property in person",
+    "example_phrases": ["send the deposit to secure it", "pay the deposit and I will arrange the viewing", "deposit first, then viewing", "transfer the deposit today to hold the room"],
+    "source": "https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2025/august/an-garda-siochana-student-accommodation-fraud-warning-august-2025.html",
+    "extra_sources": ["https://www.ccpc.ie/news-and-media/news/article/2026/09/09/student-accommodation--how-can-i-tell-the-genuine-from-a-scam"]
+  },
+  {
+    "id": "landlord_abroad",
+    "severity": "high",
+    "detection": "text",
+    "description": "Landlord claims to be abroad or out of the country and cannot show the property",
+    "example_phrases": ["I am currently abroad", "I live outside Ireland now", "I moved abroad for work", "I am out of the country"],
+    "source": "https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2026/august/25-08-2026-an-garda-siochana-issues-student-fraud-warning-ahead-of-cao-offers-25th-august-2026.html",
+    "extra_sources": ["https://www.threshold.ie/advocacy-campaign/scamwatch/"]
+  },
+  {
+    "id": "no_viewing",
+    "severity": "high",
+    "detection": "text",
+    "description": "No in-person viewing is possible, or there is always an excuse to avoid one",
+    "example_phrases": ["viewings are not possible", "you can't view it at the moment", "the tenant won't allow viewings", "I can send you a video instead"],
+    "source": "https://www.ccpc.ie/consumers/housing/rental-accommodation-scams/",
+    "extra_sources": ["https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2026/august/25-08-2026-an-garda-siochana-issues-student-fraud-warning-ahead-of-cao-offers-25th-august-2026.html"]
+  },
+  {
+    "id": "keys_by_post",
+    "severity": "high",
+    "detection": "text",
+    "description": "Offers to send keys or a contract by post or courier after payment, instead of handing them over at a viewing. Official advice is to check the keys work before paying; scammers may send fake keys or false contracts",
+    "example_phrases": ["I will post the keys", "the keys will be sent by courier", "an agent will deliver the keys after payment", "I will email you the contract"],
+    "source": "https://www.ccpc.ie/news-and-media/news/article/2026/09/09/student-accommodation--how-can-i-tell-the-genuine-from-a-scam",
+    "extra_sources": ["https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/news-media/news-archive/rental-scam-awareness-advice-25-7-19-.html"],
+    "note": "Sources warn about fake keys / keys that don't work and say to test keys before paying. The exact 'keys by post' wording is not in the official text (not verified as an official phrase)."
+  },
+  {
+    "id": "unusual_payment_method",
+    "severity": "high",
+    "detection": "text",
+    "description": "Asks for payment by cash, cryptocurrency, gift cards, money transfer services (e.g. Western Union) or peer-to-peer transfer apps",
+    "example_phrases": ["pay by Western Union", "send it via Revolut", "pay in Bitcoin", "iTunes gift cards", "send it to my PayPal friends and family", "cash only"],
+    "source": "https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2026/august/25-08-2026-an-garda-siochana-issues-student-fraud-warning-ahead-of-cao-offers-25th-august-2026.html",
+    "extra_sources": ["https://garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2024/august/an-garda-siochana-student-accommodation-fraud-warning-august-2024.html"]
+  },
+  {
+    "id": "foreign_bank_account",
+    "severity": "medium",
+    "detection": "text",
+    "description": "The account you are asked to pay into is in a different country",
+    "example_phrases": ["pay into my account in Spain", "my bank account is in the UK", "use this foreign IBAN"],
+    "source": "https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2025/august/an-garda-siochana-student-accommodation-fraud-warning-august-2025.html",
+    "note": "A non-IE IBAN country code can also be checked by a rule."
+  },
+  {
+    "id": "urgency_pressure",
+    "severity": "medium",
+    "detection": "text",
+    "description": "Pressure to pay quickly, e.g. a 'one-time offer' or threats that you will lose the property if you delay",
+    "example_phrases": ["pay today or it goes to the next person", "many people are interested", "one-time offer", "I need an answer within the hour"],
+    "source": "https://www.ccpc.ie/consumers/housing/rental-accommodation-scams/",
+    "extra_sources": ["https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2025/august/an-garda-siochana-student-accommodation-fraud-warning-august-2025.html"]
+  },
+  {
+    "id": "rent_far_below_average",
+    "severity": "high",
+    "detection": "rule",
+    "description": "Rent is far below the RTB average for the area (too good to be true)",
+    "example_phrases": ["very cheap for the area", "below market price", "great price for a quick tenant"],
+    "source": "https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2026/august/25-08-2026-an-garda-siochana-issues-student-fraud-warning-ahead-of-cao-offers-25th-august-2026.html",
+    "extra_sources": ["https://www.universityofgalway.ie/student-life/accommodation/off-campus/"],
+    "note": "Detected by a rule using data/rents.json, not by the LLM. Garda advice says to compare the asking price with the RTB rent index."
+  },
+  {
+    "id": "messaging_only_contact",
+    "severity": "medium",
+    "detection": "text",
+    "description": "Contact only through WhatsApp, Messenger, text, email or social media; no phone call or meeting",
+    "example_phrases": ["contact me on WhatsApp only", "message me on Messenger", "I can only reply by email", "no calls please"],
+    "source": "https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2026/august/25-08-2026-an-garda-siochana-issues-student-fraud-warning-ahead-of-cao-offers-25th-august-2026.html",
+    "extra_sources": ["https://www.ccpc.ie/consumers/housing/rental-accommodation-scams/", "https://www.universityofgalway.ie/student-life/accommodation/off-campus/"]
+  },
+  {
+    "id": "reused_listing",
+    "severity": "medium",
+    "detection": "text",
+    "description": "Listing text or photos copied from other adverts; the same bogus property advertised in multiple places",
+    "example_phrases": ["photos look like a hotel or another country", "same description seen on another advert", "non-Irish plug sockets in photos"],
+    "source": "https://www.ccpc.ie/consumers/housing/rental-accommodation-scams/",
+    "extra_sources": ["https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2026/august/25-08-2026-an-garda-siochana-issues-student-fraud-warning-ahead-of-cao-offers-25th-august-2026.html", "https://www.universityofgalway.ie/student-life/accommodation/off-campus/"],
+    "note": "Best detected by matching against the shared report list (hash of normalised text), not only by the LLM."
+  },
+  {
+    "id": "early_id_documents",
+    "severity": "medium",
+    "detection": "text",
+    "description": "Asks for copies of your passport, bank statements or other sensitive documents before the landlord and property are confirmed genuine",
+    "example_phrases": ["send a copy of your passport", "send your bank statements first", "I need your ID before the viewing", "send a photo of your ID with the payment receipt"],
+    "source": "https://www.ccpc.ie/news-and-media/news/article/2026/09/09/student-accommodation--how-can-i-tell-the-genuine-from-a-scam"
+  },
+  {
+    "id": "payment_before_lease",
+    "severity": "high",
+    "detection": "text",
+    "description": "Asks for a deposit and rent before any lease or written agreement, often 'no questions asked'",
+    "example_phrases": ["no questions asked", "we can sign the contract after you pay", "no need for references", "pay first, lease later"],
+    "source": "https://www.ccpc.ie/consumers/housing/rental-accommodation-scams/",
+    "extra_sources": ["https://www.universityofgalway.ie/student-life/accommodation/off-campus/"]
+  }
+]

@@ -1,0 +1,2350 @@
+{
+ "source": "RTB / CSO RIA02",
+ "source_url": "https://data.cso.ie/table/RIA02",
+ "api_url": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/RIA02/JSON-stat/2.0/en",
+ "licence": "CC BY 4.0",
+ "attribution": "Source: Residential Tenancies Board (RTB), RTB Average Monthly Rent Report (CSO PxStat table RIA02), licensed under CC BY 4.0. Values rounded to the nearest euro.",
+ "table_updated": "2026-05-14T11:00:00.000Z",
+ "period": "2025",
+ "period_type": "calendar year",
+ "unit": "EUR per month, mean of registered tenancies (all property types)",
+ "keys": {
+  "all": "All bedrooms",
+  "1bed": "One bed",
+  "2bed": "Two bed",
+  "3bed": "Three bed",
+  "4plusbed": "Four plus bed"
+ },
+ "notes": [
+  "Missing values are suppressed or absent in the source and are left out, never estimated.",
+  "Dublin postal district totals (Dublin 1-24) are empty in RIA02 after 2021. Use postal_districts[...].neighbourhoods if the listing names one, else the 'Dublin' county figure."
+ ],
+ "areas": {
+  "Carlow": {
+   "all": 1316,
+   "1bed": 1068,
+   "2bed": 1093,
+   "3bed": 1262,
+   "4plusbed": 1797
+  },
+  "Carlow Town": {
+   "all": 1347,
+   "1bed": 1096,
+   "2bed": 1098,
+   "3bed": 1255,
+   "4plusbed": 1897
+  },
+  "Tullow, Carlow": {
+   "all": 1311,
+   "3bed": 1350
+  },
+  "Cavan": {
+   "all": 1095,
+   "1bed": 773,
+   "2bed": 1036,
+   "3bed": 1124,
+   "4plusbed": 1317
+  },
+  "Cavan Town": {
+   "all": 1202,
+   "1bed": 888,
+   "2bed": 1146,
+   "3bed": 1255,
+   "4plusbed": 1430
+  },
+  "Bailieborough, Cavan": {
+   "all": 1053
+  },
+  "Ballyconnell, Cavan": {
+   "all": 946
+  },
+  "Ballyjamesduff, Cavan": {
+   "all": 946
+  },
+  "Belturbet, Cavan": {
+   "all": 898,
+   "3bed": 920
+  },
+  "Cootehill, Cavan": {
+   "all": 873
+  },
+  "Kingscourt, Cavan": {
+   "all": 1184,
+   "3bed": 1191
+  },
+  "Virginia, Cavan": {
+   "all": 1222,
+   "2bed": 1066,
+   "3bed": 1307,
+   "4plusbed": 1412
+  },
+  "Clare": {
+   "all": 1170,
+   "1bed": 768,
+   "2bed": 1080,
+   "3bed": 1256,
+   "4plusbed": 1389
+  },
+  "Ennis, Clare": {
+   "all": 1157,
+   "1bed": 714,
+   "2bed": 1020,
+   "3bed": 1319,
+   "4plusbed": 1434
+  },
+  "Killaloe, Clare": {
+   "all": 1319,
+   "3bed": 1422
+  },
+  "Kilrush, Clare": {
+   "all": 897,
+   "2bed": 933,
+   "3bed": 868
+  },
+  "Newmarket-On-Fergus, Clare": {
+   "all": 1463
+  },
+  "Shannon, Clare": {
+   "all": 1229,
+   "2bed": 1117,
+   "3bed": 1303
+  },
+  "Sixmilebridge, Clare": {
+   "all": 1256
+  },
+  "Cork": {
+   "all": 1542,
+   "1bed": 1143,
+   "2bed": 1451,
+   "3bed": 1581,
+   "4plusbed": 2136
+  },
+  "Cork City": {
+   "all": 1701,
+   "1bed": 1231,
+   "2bed": 1592,
+   "3bed": 1800,
+   "4plusbed": 2520
+  },
+  "Ballincollig, Cork": {
+   "all": 1656,
+   "1bed": 1263,
+   "2bed": 1624,
+   "3bed": 1647,
+   "4plusbed": 2221
+  },
+  "Ballintemple, Cork": {
+   "all": 1882
+  },
+  "Bandon, Cork": {
+   "all": 1224,
+   "1bed": 825,
+   "2bed": 1203,
+   "3bed": 1335,
+   "4plusbed": 1551
+  },
+  "Bantry, Cork": {
+   "all": 1072,
+   "2bed": 956,
+   "3bed": 1188
+  },
+  "Bishopstown, Cork": {
+   "all": 2147,
+   "3bed": 1925,
+   "4plusbed": 2645
+  },
+  "Blackpool, Cork": {
+   "all": 1316,
+   "2bed": 1428
+  },
+  "Blackrock, Cork": {
+   "all": 1759,
+   "2bed": 1572,
+   "3bed": 1945
+  },
+  "Blarney, Cork": {
+   "all": 1614,
+   "2bed": 1476,
+   "3bed": 1610,
+   "4plusbed": 2061
+  },
+  "Carrigaline, Cork": {
+   "all": 1592,
+   "2bed": 1363,
+   "3bed": 1598
+  },
+  "Carrigtwohill, Cork": {
+   "all": 1554,
+   "3bed": 1479
+  },
+  "Charleville, Cork": {
+   "all": 1046,
+   "3bed": 1112
+  },
+  "Clonakilty, Cork": {
+   "all": 1244,
+   "2bed": 1194,
+   "3bed": 1283
+  },
+  "Cloyne, Cork": {
+   "all": 1250
+  },
+  "Cobh, Cork": {
+   "all": 1265,
+   "1bed": 1082,
+   "2bed": 1167,
+   "3bed": 1430
+  },
+  "Crosshaven, Cork": {
+   "all": 1696
+  },
+  "Dunmanway, Cork": {
+   "all": 1122
+  },
+  "Fermoy, Cork": {
+   "all": 1197,
+   "2bed": 1022,
+   "3bed": 1221
+  },
+  "Glanmire, Cork": {
+   "all": 1615,
+   "2bed": 1241,
+   "3bed": 1691
+  },
+  "Kanturk, Cork": {
+   "all": 1095
+  },
+  "Kinsale, Cork": {
+   "all": 1911,
+   "2bed": 1704,
+   "3bed": 2051,
+   "4plusbed": 2665
+  },
+  "Macroom, Cork": {
+   "all": 1209,
+   "2bed": 1057,
+   "3bed": 1295
+  },
+  "Mallow, Cork": {
+   "all": 1245,
+   "2bed": 1166,
+   "3bed": 1251,
+   "4plusbed": 1511
+  },
+  "Midleton, Cork": {
+   "all": 1374,
+   "1bed": 1096,
+   "2bed": 1247,
+   "3bed": 1584
+  },
+  "Mitchelstown, Cork": {
+   "all": 1082
+  },
+  "Passage West, Cork": {
+   "all": 1567,
+   "2bed": 1454,
+   "3bed": 1537
+  },
+  "Skibbereen, Cork": {
+   "all": 1047,
+   "1bed": 801,
+   "2bed": 1035,
+   "3bed": 1131
+  },
+  "Youghal, Cork": {
+   "all": 1122,
+   "2bed": 1121,
+   "3bed": 1154
+  },
+  "Donegal": {
+   "all": 977,
+   "1bed": 720,
+   "2bed": 892,
+   "3bed": 1015,
+   "4plusbed": 1115
+  },
+  "Donegal Town": {
+   "all": 839
+  },
+  "Ballybofey, Donegal": {
+   "all": 857,
+   "3bed": 870
+  },
+  "Buncrana, Donegal": {
+   "all": 893,
+   "2bed": 754,
+   "3bed": 949,
+   "4plusbed": 1072
+  },
+  "Bundoran, Donegal": {
+   "all": 873
+  },
+  "Carndonagh, Donegal": {
+   "all": 740,
+   "3bed": 763
+  },
+  "Letterkenny, Donegal": {
+   "all": 1138,
+   "1bed": 820,
+   "2bed": 1035,
+   "3bed": 1194,
+   "4plusbed": 1288
+  },
+  "Lifford, Donegal": {
+   "all": 901
+  },
+  "Stranorlar, Donegal": {
+   "all": 879
+  },
+  "Dublin": {
+   "all": 2159,
+   "1bed": 1736,
+   "2bed": 2247,
+   "3bed": 2567,
+   "4plusbed": 3330
+  },
+  "Balbriggan, Dublin": {
+   "all": 1703,
+   "1bed": 1245,
+   "2bed": 1673,
+   "3bed": 1910
+  },
+  "Blackrock, Dublin": {
+   "all": 2633,
+   "1bed": 2188,
+   "2bed": 2571,
+   "3bed": 3091,
+   "4plusbed": 3843
+  },
+  "Booterstown, Dublin": {
+   "all": 2648,
+   "2bed": 2309
+  },
+  "Dalkey, Dublin": {
+   "all": 2886,
+   "1bed": 2284,
+   "2bed": 2833
+  },
+  "Donabate, Dublin": {
+   "all": 1953,
+   "2bed": 1810,
+   "3bed": 2185
+  },
+  "Dun Laoghaire, Dublin": {
+   "all": 2226,
+   "1bed": 1705,
+   "2bed": 2271,
+   "3bed": 2927,
+   "4plusbed": 3823
+  },
+  "Glenageary, Dublin": {
+   "all": 2772,
+   "2bed": 2494
+  },
+  "Howth, Dublin": {
+   "all": 2392,
+   "1bed": 1997,
+   "2bed": 2487,
+   "3bed": 2749
+  },
+  "Killiney, Dublin": {
+   "all": 2625,
+   "1bed": 2107,
+   "2bed": 2509,
+   "3bed": 3044
+  },
+  "Kinsealy, Dublin": {
+   "all": 2203
+  },
+  "Lucan, Dublin": {
+   "all": 2160,
+   "1bed": 1797,
+   "2bed": 2160,
+   "3bed": 2322,
+   "4plusbed": 2677
+  },
+  "Lusk, Dublin": {
+   "all": 1981,
+   "3bed": 2158
+  },
+  "Malahide, Dublin": {
+   "all": 2386,
+   "1bed": 1826,
+   "2bed": 2166,
+   "3bed": 2609,
+   "4plusbed": 3635
+  },
+  "Monkstown, Dublin": {
+   "all": 2201,
+   "1bed": 1496,
+   "2bed": 2102
+  },
+  "Mount Merrion, Dublin": {
+   "all": 3757
+  },
+  "Portmarnock, Dublin": {
+   "all": 2373,
+   "2bed": 2009,
+   "3bed": 2671,
+   "4plusbed": 3261
+  },
+  "Rathcoole, Dublin": {
+   "all": 1881,
+   "2bed": 1873
+  },
+  "Rush, Dublin": {
+   "all": 1868,
+   "2bed": 1551
+  },
+  "Saggart, Dublin": {
+   "all": 2066,
+   "2bed": 1863,
+   "3bed": 2315
+  },
+  "Sandycove, Dublin": {
+   "all": 2709,
+   "2bed": 2304
+  },
+  "Shankill, Dublin": {
+   "all": 2054,
+   "2bed": 1986
+  },
+  "Skerries, Dublin": {
+   "all": 1975,
+   "2bed": 1741,
+   "3bed": 2187
+  },
+  "Stillorgan, Dublin": {
+   "all": 2406,
+   "1bed": 2085,
+   "2bed": 2440,
+   "3bed": 2830,
+   "4plusbed": 3571
+  },
+  "Swords, Dublin": {
+   "all": 1946,
+   "1bed": 1414,
+   "2bed": 1810,
+   "3bed": 2239,
+   "4plusbed": 2509
+  },
+  "I.F.S.C., Dublin 1": {
+   "all": 2136,
+   "1bed": 1851,
+   "2bed": 2295
+  },
+  "Parnell Street, Dublin 1": {
+   "all": 1960,
+   "1bed": 1713,
+   "2bed": 2078
+  },
+  "Spencer Dock, Dublin 1": {
+   "all": 2375,
+   "2bed": 2413
+  },
+  "Summerhill, Dublin 1": {
+   "all": 1790,
+   "1bed": 1433,
+   "2bed": 2119
+  },
+  "Charlemont Street, Dublin 2": {
+   "all": 2226
+  },
+  "Pearse Street, Dublin 2": {
+   "all": 1959,
+   "1bed": 1681,
+   "2bed": 2215
+  },
+  "Tara Street, Dublin 2": {
+   "all": 2805
+  },
+  "Temple Bar, Dublin 2": {
+   "all": 2165
+  },
+  "Townsend Street, Dublin 2": {
+   "all": 2076,
+   "1bed": 1917,
+   "2bed": 2168
+  },
+  "Clonliffe, Dublin 3": {
+   "all": 1638,
+   "1bed": 1494
+  },
+  "Clontarf, Dublin 3": {
+   "all": 2084,
+   "1bed": 1520,
+   "2bed": 2116,
+   "3bed": 2795
+  },
+  "Drumcondra, Dublin 3": {
+   "all": 1843,
+   "1bed": 1313,
+   "2bed": 2020,
+   "3bed": 2378,
+   "4plusbed": 3014
+  },
+  "East Wall, Dublin 3": {
+   "all": 2072,
+   "1bed": 1624,
+   "2bed": 2091
+  },
+  "Fairview, Dublin 3": {
+   "all": 1861,
+   "1bed": 1472,
+   "2bed": 2157
+  },
+  "North Strand, Dublin 3": {
+   "all": 1830
+  },
+  "Ballsbridge, Dublin 4": {
+   "all": 2570,
+   "1bed": 1775,
+   "2bed": 2677,
+   "3bed": 3806,
+   "4plusbed": 5280
+  },
+  "Donnybrook, Dublin 4": {
+   "all": 2588,
+   "1bed": 1637,
+   "2bed": 2434,
+   "3bed": 3356,
+   "4plusbed": 5249
+  },
+  "Irishtown, Dublin 4": {
+   "all": 2213,
+   "2bed": 2199
+  },
+  "Merrion, Dublin 4": {
+   "all": 2357,
+   "1bed": 1867,
+   "2bed": 2515
+  },
+  "Pembroke, Dublin 4": {
+   "all": 2590,
+   "1bed": 1746,
+   "2bed": 2665
+  },
+  "Ringsend, Dublin 4": {
+   "all": 2301,
+   "2bed": 2197
+  },
+  "Sandymount, Dublin 4": {
+   "all": 2635,
+   "1bed": 1797,
+   "2bed": 2335,
+   "3bed": 3519,
+   "4plusbed": 4882
+  },
+  "Artane, Dublin 5": {
+   "all": 2227,
+   "3bed": 2443
+  },
+  "Killester, Dublin 5": {
+   "all": 2434
+  },
+  "Raheny, Dublin 5": {
+   "all": 2185,
+   "1bed": 1559,
+   "2bed": 2013,
+   "3bed": 2480
+  },
+  "Harolds Cross, Dublin 6": {
+   "all": 2133,
+   "1bed": 1601,
+   "2bed": 2247,
+   "3bed": 2612
+  },
+  "Milltown, Dublin 6": {
+   "all": 2322,
+   "1bed": 1849,
+   "2bed": 2370,
+   "3bed": 2885
+  },
+  "Ranelagh, Dublin 6": {
+   "all": 2093,
+   "1bed": 1585,
+   "2bed": 2288,
+   "3bed": 3287,
+   "4plusbed": 4804
+  },
+  "Rathgar, Dublin 6": {
+   "all": 1779,
+   "1bed": 1490,
+   "2bed": 2130,
+   "3bed": 2862
+  },
+  "Rathmines, Dublin 6": {
+   "all": 1651,
+   "1bed": 1408,
+   "2bed": 2023,
+   "3bed": 2667,
+   "4plusbed": 4254
+  },
+  "Templeogue, Dublin 6W": {
+   "all": 2528,
+   "4plusbed": 2998
+  },
+  "Terenure, Dublin 6W": {
+   "all": 2119,
+   "1bed": 1552,
+   "2bed": 2067,
+   "3bed": 2552,
+   "4plusbed": 3444
+  },
+  "Arbour Hill, Dublin 7": {
+   "all": 2160
+  },
+  "Cabra, Dublin 7": {
+   "all": 1606,
+   "1bed": 1278,
+   "2bed": 1929,
+   "3bed": 2232
+  },
+  "North Circular Road, Dublin 7": {
+   "all": 1894,
+   "1bed": 1457,
+   "2bed": 2222
+  },
+  "Smithfield, Dublin 7": {
+   "all": 2100,
+   "1bed": 1685,
+   "2bed": 2257
+  },
+  "Stoneybatter, Dublin 7": {
+   "all": 1868,
+   "2bed": 1944
+  },
+  "Christchurch, Dublin 8": {
+   "all": 1754,
+   "1bed": 1626
+  },
+  "Cork Street, Dublin 8": {
+   "all": 1885,
+   "1bed": 1611,
+   "2bed": 1992
+  },
+  "Inchicore, Dublin 8": {
+   "all": 1984,
+   "1bed": 1510,
+   "2bed": 1882,
+   "3bed": 2420
+  },
+  "Islandbridge, Dublin 8": {
+   "all": 2094,
+   "1bed": 1822,
+   "2bed": 2140,
+   "3bed": 2797
+  },
+  "Kilmainham, Dublin 8": {
+   "all": 1926,
+   "1bed": 1527,
+   "2bed": 2032
+  },
+  "Portobello, Dublin 8": {
+   "all": 1876,
+   "1bed": 1532
+  },
+  "Rialto, Dublin 8": {
+   "all": 1783,
+   "1bed": 1476,
+   "2bed": 1899
+  },
+  "South Circular Road, Dublin 8": {
+   "all": 1843,
+   "1bed": 1474,
+   "2bed": 2076
+  },
+  "Ballymun, Dublin 9": {
+   "all": 1840
+  },
+  "Beaumont, Dublin 9": {
+   "all": 2184,
+   "2bed": 2069,
+   "3bed": 2460
+  },
+  "Glasnevin, Dublin 9": {
+   "all": 1999,
+   "1bed": 1429,
+   "2bed": 1949,
+   "3bed": 2389,
+   "4plusbed": 3025
+  },
+  "Santry, Dublin 9": {
+   "all": 2113,
+   "1bed": 1677,
+   "2bed": 2069,
+   "3bed": 2282,
+   "4plusbed": 3114
+  },
+  "Whitehall, Dublin 9": {
+   "all": 1933,
+   "1bed": 1252
+  },
+  "Ballyfermot, Dublin 10": {
+   "all": 1928
+  },
+  "Cherry Orchard, Dublin 10": {
+   "all": 1676
+  },
+  "Finglas, Dublin 11": {
+   "all": 1934,
+   "1bed": 1575,
+   "2bed": 1935,
+   "3bed": 2105,
+   "4plusbed": 2536
+  },
+  "Crumlin, Dublin 12": {
+   "all": 2063,
+   "1bed": 1448,
+   "2bed": 1959,
+   "3bed": 2377
+  },
+  "Drimnagh, Dublin 12": {
+   "all": 2090,
+   "2bed": 1978,
+   "3bed": 2231
+  },
+  "Kimmage, Dublin 12": {
+   "all": 1909,
+   "1bed": 1456,
+   "2bed": 1978
+  },
+  "Walkinstown, Dublin 12": {
+   "all": 2303
+  },
+  "Baldoyle, Dublin 13": {
+   "all": 2114
+  },
+  "Balgriffin, Dublin 13": {
+   "all": 1919
+  },
+  "Clongriffin, Dublin 13": {
+   "all": 1949,
+   "1bed": 1610,
+   "2bed": 1990,
+   "3bed": 2385
+  },
+  "Sutton, Dublin 13": {
+   "all": 2462,
+   "2bed": 2049,
+   "3bed": 2504
+  },
+  "Churchtown, Dublin 14": {
+   "all": 2573,
+   "1bed": 2015,
+   "2bed": 2568,
+   "3bed": 2726
+  },
+  "Clonskeagh, Dublin 14": {
+   "all": 2624,
+   "2bed": 2079,
+   "3bed": 2602,
+   "4plusbed": 4053
+  },
+  "Goatstown, Dublin 14": {
+   "all": 3210
+  },
+  "Ashtown, Dublin 15": {
+   "all": 2021,
+   "1bed": 1675,
+   "2bed": 2006
+  },
+  "Blanchardstown, Dublin 15": {
+   "all": 1960,
+   "2bed": 1848,
+   "3bed": 2082
+  },
+  "Castleknock, Dublin 15": {
+   "all": 2169,
+   "1bed": 1568,
+   "2bed": 2026,
+   "3bed": 2310,
+   "4plusbed": 2887
+  },
+  "Clonee, Dublin 15": {
+   "all": 1986,
+   "2bed": 1736
+  },
+  "Clonsilla, Dublin 15": {
+   "all": 2063,
+   "2bed": 1879,
+   "3bed": 2059,
+   "4plusbed": 2596
+  },
+  "Mulhuddart, Dublin 15": {
+   "all": 1801,
+   "3bed": 1921
+  },
+  "Ongar, Dublin 15": {
+   "all": 1877,
+   "2bed": 1672
+  },
+  "Porterstown, Dublin 15": {
+   "all": 1820,
+   "2bed": 1768
+  },
+  "Royal Canal Park, Dublin 15": {
+   "all": 1976,
+   "1bed": 1588,
+   "2bed": 2166
+  },
+  "Ballinteer, Dublin 16": {
+   "all": 2266,
+   "2bed": 2091,
+   "3bed": 2347
+  },
+  "Dundrum, Dublin 16": {
+   "all": 2336,
+   "1bed": 2042,
+   "2bed": 2338,
+   "3bed": 2934,
+   "4plusbed": 3305
+  },
+  "Knocklyon, Dublin 16": {
+   "all": 2228
+  },
+  "Rathfarnham, Dublin 16": {
+   "all": 2244,
+   "1bed": 1564,
+   "2bed": 1996,
+   "3bed": 2378,
+   "4plusbed": 3002
+  },
+  "Malahide Road, Dublin 17": {
+   "all": 1828,
+   "1bed": 1442,
+   "2bed": 1922
+  },
+  "Cabinteely, Dublin 18": {
+   "all": 2324,
+   "2bed": 2088
+  },
+  "Carrickmines, Dublin 18": {
+   "all": 2288,
+   "2bed": 2162
+  },
+  "Foxrock, Dublin 18": {
+   "all": 3448,
+   "4plusbed": 4112
+  },
+  "Leopardstown, Dublin 18": {
+   "all": 2177,
+   "1bed": 1836,
+   "2bed": 2137,
+   "3bed": 2659
+  },
+  "Sandyford, Dublin 18": {
+   "all": 2310,
+   "1bed": 2035,
+   "2bed": 2391,
+   "3bed": 2728
+  },
+  "Stepaside, Dublin 18": {
+   "all": 2006,
+   "2bed": 1970
+  },
+  "Chapelizod, Dublin 20": {
+   "all": 1881,
+   "2bed": 1871
+  },
+  "Palmerstown, Dublin 20": {
+   "all": 2071,
+   "3bed": 2088
+  },
+  "Clondalkin, Dublin 22": {
+   "all": 1862,
+   "1bed": 1407,
+   "2bed": 1777,
+   "3bed": 2009
+  },
+  "Ballycullen, Dublin 24": {
+   "all": 2095,
+   "2bed": 1848
+  },
+  "Citywest, Dublin 24": {
+   "all": 2127,
+   "1bed": 1783,
+   "2bed": 2142,
+   "3bed": 2465
+  },
+  "Firhouse, Dublin 24": {
+   "all": 2149,
+   "3bed": 2237
+  },
+  "Tallaght, Dublin 24": {
+   "all": 1816,
+   "1bed": 1407,
+   "2bed": 1790,
+   "3bed": 2055
+  },
+  "Galway": {
+   "all": 1637,
+   "1bed": 1090,
+   "2bed": 1479,
+   "3bed": 1641,
+   "4plusbed": 2066
+  },
+  "Galway City": {
+   "all": 1850,
+   "1bed": 1194,
+   "2bed": 1650,
+   "3bed": 1888,
+   "4plusbed": 2412
+  },
+  "Athenry, Galway": {
+   "all": 1404,
+   "2bed": 1312,
+   "3bed": 1468,
+   "4plusbed": 1589
+  },
+  "Ballinasloe, Galway": {
+   "all": 1149,
+   "2bed": 963,
+   "3bed": 1223,
+   "4plusbed": 1226
+  },
+  "Ballybane, Galway": {
+   "all": 1584,
+   "3bed": 1431
+  },
+  "Barna, Galway": {
+   "all": 1860,
+   "2bed": 1711
+  },
+  "Bohermore, Galway": {
+   "all": 1809,
+   "2bed": 1591
+  },
+  "Claregalway, Galway": {
+   "all": 1678,
+   "4plusbed": 1950
+  },
+  "Clifden, Galway": {
+   "all": 959
+  },
+  "Doughiska, Galway": {
+   "all": 1581,
+   "2bed": 1538,
+   "3bed": 1802
+  },
+  "Gort, Galway": {
+   "all": 1264,
+   "2bed": 1266
+  },
+  "Headford, Galway": {
+   "all": 1347
+  },
+  "Loughrea, Galway": {
+   "all": 1283,
+   "1bed": 917,
+   "2bed": 1179,
+   "3bed": 1351,
+   "4plusbed": 1553
+  },
+  "Moycullen, Galway": {
+   "all": 1533,
+   "2bed": 1254
+  },
+  "Oranmore, Galway": {
+   "all": 1519,
+   "2bed": 1305,
+   "3bed": 1836
+  },
+  "Oughterard, Galway": {
+   "all": 1250
+  },
+  "Portumna, Galway": {
+   "all": 1052,
+   "2bed": 970
+  },
+  "Tuam, Galway": {
+   "all": 1331,
+   "2bed": 1165,
+   "3bed": 1342,
+   "4plusbed": 1595
+  },
+  "Kerry": {
+   "all": 1182,
+   "1bed": 860,
+   "2bed": 1137,
+   "3bed": 1198,
+   "4plusbed": 1442
+  },
+  "Castleisland, Kerry": {
+   "all": 1078,
+   "3bed": 1127
+  },
+  "Dingle, Kerry": {
+   "all": 1000
+  },
+  "Kenmare, Kerry": {
+   "all": 1130,
+   "3bed": 1183
+  },
+  "Killarney, Kerry": {
+   "all": 1302,
+   "1bed": 973,
+   "2bed": 1317,
+   "3bed": 1288,
+   "4plusbed": 1527
+  },
+  "Killorglin, Kerry": {
+   "all": 1143,
+   "2bed": 1019,
+   "3bed": 1219
+  },
+  "Listowel, Kerry": {
+   "all": 1079,
+   "3bed": 1165
+  },
+  "Tralee, Kerry": {
+   "all": 1210,
+   "1bed": 804,
+   "2bed": 1144,
+   "3bed": 1251,
+   "4plusbed": 1647
+  },
+  "Kildare": {
+   "all": 1701,
+   "1bed": 1229,
+   "2bed": 1559,
+   "3bed": 1858,
+   "4plusbed": 2331
+  },
+  "Kildare Town": {
+   "all": 1461,
+   "2bed": 1341,
+   "3bed": 1574
+  },
+  "Athy, Kildare": {
+   "all": 1321,
+   "2bed": 1247,
+   "3bed": 1445
+  },
+  "Celbridge, Kildare": {
+   "all": 1848,
+   "2bed": 1612,
+   "3bed": 2036
+  },
+  "Clane, Kildare": {
+   "all": 1661,
+   "2bed": 1532,
+   "3bed": 1951
+  },
+  "Kilcock, Kildare": {
+   "all": 1548,
+   "2bed": 1470
+  },
+  "Kilcullen, Kildare": {
+   "all": 1483,
+   "2bed": 1425
+  },
+  "Kill, Kildare": {
+   "all": 1857
+  },
+  "Leixlip, Kildare": {
+   "all": 1867,
+   "1bed": 1425,
+   "2bed": 1685,
+   "3bed": 2082,
+   "4plusbed": 2644
+  },
+  "Maynooth, Kildare": {
+   "all": 1942,
+   "1bed": 1270,
+   "2bed": 1735,
+   "3bed": 2109,
+   "4plusbed": 2594
+  },
+  "Monasterevin, Kildare": {
+   "all": 1380
+  },
+  "Naas, Kildare": {
+   "all": 1889,
+   "1bed": 1393,
+   "2bed": 1743,
+   "3bed": 2042,
+   "4plusbed": 2412
+  },
+  "Newbridge, Kildare": {
+   "all": 1422,
+   "1bed": 1055,
+   "2bed": 1337,
+   "3bed": 1602,
+   "4plusbed": 1923
+  },
+  "Rathangan, Kildare": {
+   "all": 1205
+  },
+  "Sallins, Kildare": {
+   "all": 1602,
+   "2bed": 1498
+  },
+  "Kilkenny": {
+   "all": 1207,
+   "1bed": 885,
+   "2bed": 1096,
+   "3bed": 1227,
+   "4plusbed": 1437
+  },
+  "Callan, Kilkenny": {
+   "all": 1067
+  },
+  "Thomastown, Kilkenny": {
+   "all": 1337
+  },
+  "Laois": {
+   "all": 1235,
+   "1bed": 961,
+   "2bed": 1175,
+   "3bed": 1263,
+   "4plusbed": 1530
+  },
+  "Mountmellick, Laois": {
+   "all": 1218,
+   "2bed": 1072,
+   "3bed": 1258
+  },
+  "Mountrath, Laois": {
+   "all": 1117
+  },
+  "Portarlington, Laois": {
+   "all": 1150,
+   "2bed": 1038
+  },
+  "Portlaoise, Laois": {
+   "all": 1268,
+   "1bed": 1034,
+   "2bed": 1250,
+   "3bed": 1273,
+   "4plusbed": 1504
+  },
+  "Leitrim": {
+   "all": 992,
+   "1bed": 775,
+   "2bed": 932,
+   "3bed": 998,
+   "4plusbed": 1148
+  },
+  "Carrick-On-Shannon, Leitrim": {
+   "all": 1081,
+   "2bed": 1049,
+   "3bed": 1087
+  },
+  "Manorhamilton, Leitrim": {
+   "all": 871
+  },
+  "Limerick": {
+   "all": 1619,
+   "1bed": 1205,
+   "2bed": 1482,
+   "3bed": 1565,
+   "4plusbed": 2111
+  },
+  "Limerick City": {
+   "all": 1709,
+   "1bed": 1261,
+   "2bed": 1538,
+   "3bed": 1691,
+   "4plusbed": 2261
+  },
+  "Abbeyfeale, Limerick": {
+   "all": 952
+  },
+  "Annacotty, Limerick": {
+   "all": 1883,
+   "4plusbed": 2083
+  },
+  "Castleconnell, Limerick": {
+   "all": 1512
+  },
+  "Castletroy, Limerick": {
+   "all": 2041,
+   "2bed": 1480,
+   "3bed": 1754,
+   "4plusbed": 2373
+  },
+  "Corbally, Limerick": {
+   "all": 1671
+  },
+  "Dock Road, Limerick": {
+   "all": 1346,
+   "2bed": 1388
+  },
+  "Dooradoyle, Limerick": {
+   "all": 1688,
+   "2bed": 1468,
+   "3bed": 1649,
+   "4plusbed": 2186
+  },
+  "Kilmallock, Limerick": {
+   "all": 1071
+  },
+  "Newcastle West, Limerick": {
+   "all": 1065,
+   "2bed": 987,
+   "3bed": 1061
+  },
+  "Raheen, Limerick": {
+   "all": 1658
+  },
+  "Longford": {
+   "all": 1120,
+   "1bed": 878,
+   "2bed": 1061,
+   "3bed": 1188,
+   "4plusbed": 1289
+  },
+  "Longford Town": {
+   "all": 1145,
+   "1bed": 915,
+   "2bed": 1117,
+   "3bed": 1193,
+   "4plusbed": 1340
+  },
+  "Ballymahon, Longford": {
+   "all": 1064,
+   "1bed": 821,
+   "2bed": 1079,
+   "3bed": 1170
+  },
+  "Edgeworthstown, Longford": {
+   "all": 1108,
+   "3bed": 1223
+  },
+  "Louth": {
+   "all": 1433,
+   "1bed": 1099,
+   "2bed": 1321,
+   "3bed": 1528,
+   "4plusbed": 1893
+  },
+  "Ardee, Louth": {
+   "all": 1269,
+   "2bed": 1263
+  },
+  "Drogheda, Louth": {
+   "all": 1454,
+   "1bed": 1146,
+   "2bed": 1385,
+   "3bed": 1599,
+   "4plusbed": 1947
+  },
+  "Dundalk, Louth": {
+   "all": 1394,
+   "1bed": 1061,
+   "2bed": 1258,
+   "3bed": 1470,
+   "4plusbed": 1859
+  },
+  "Mayo": {
+   "all": 1117,
+   "1bed": 799,
+   "2bed": 1067,
+   "3bed": 1137,
+   "4plusbed": 1291
+  },
+  "Ballina, Mayo": {
+   "all": 1019,
+   "1bed": 764,
+   "2bed": 898,
+   "3bed": 1087,
+   "4plusbed": 1144
+  },
+  "Ballinrobe, Mayo": {
+   "all": 1030,
+   "2bed": 912,
+   "3bed": 1039
+  },
+  "Ballyhaunis, Mayo": {
+   "all": 859,
+   "3bed": 917
+  },
+  "Belmullet, Mayo": {
+   "all": 745
+  },
+  "Castlebar, Mayo": {
+   "all": 1247,
+   "1bed": 901,
+   "2bed": 1195,
+   "3bed": 1295,
+   "4plusbed": 1435
+  },
+  "Charlestown, Mayo": {
+   "all": 1013
+  },
+  "Claremorris, Mayo": {
+   "all": 1063,
+   "2bed": 1039,
+   "3bed": 1064
+  },
+  "Foxford, Mayo": {
+   "all": 966
+  },
+  "Swinford, Mayo": {
+   "all": 953
+  },
+  "Westport, Mayo": {
+   "all": 1307,
+   "2bed": 1244,
+   "3bed": 1335,
+   "4plusbed": 1732
+  },
+  "Meath": {
+   "all": 1542,
+   "1bed": 1078,
+   "2bed": 1502,
+   "3bed": 1639,
+   "4plusbed": 1871
+  },
+  "Ashbourne, Meath": {
+   "all": 1755,
+   "2bed": 1719,
+   "3bed": 1823
+  },
+  "Athboy, Meath": {
+   "all": 1249
+  },
+  "Bettystown, Meath": {
+   "all": 1639,
+   "2bed": 1462,
+   "3bed": 1769
+  },
+  "Clonee, Meath": {
+   "all": 1872
+  },
+  "Drogheda, Meath": {
+   "all": 1801,
+   "2bed": 1805,
+   "3bed": 1729
+  },
+  "Duleek, Meath": {
+   "all": 1370
+  },
+  "Dunboyne, Meath": {
+   "all": 1895,
+   "2bed": 1820
+  },
+  "Dunshaughlin, Meath": {
+   "all": 1850,
+   "2bed": 1698
+  },
+  "Enfield, Meath": {
+   "all": 1715
+  },
+  "Kells, Meath": {
+   "all": 1290,
+   "2bed": 1209,
+   "3bed": 1341,
+   "4plusbed": 1568
+  },
+  "Navan, Meath": {
+   "all": 1423,
+   "1bed": 1000,
+   "2bed": 1383,
+   "3bed": 1577,
+   "4plusbed": 1681
+  },
+  "Ratoath, Meath": {
+   "all": 1799,
+   "2bed": 1570,
+   "3bed": 1947
+  },
+  "Trim, Meath": {
+   "all": 1439,
+   "2bed": 1421,
+   "3bed": 1611
+  },
+  "Monaghan": {
+   "all": 1028,
+   "1bed": 747,
+   "2bed": 927,
+   "3bed": 1098,
+   "4plusbed": 1258
+  },
+  "Ballybay, Monaghan": {
+   "all": 982,
+   "3bed": 1033
+  },
+  "Carrickmacross, Monaghan": {
+   "all": 1121,
+   "2bed": 1083,
+   "3bed": 1179,
+   "4plusbed": 1328
+  },
+  "Castleblayney, Monaghan": {
+   "all": 1064,
+   "2bed": 956,
+   "3bed": 1170
+  },
+  "Monaghan Town": {
+   "all": 1011,
+   "1bed": 814,
+   "2bed": 905,
+   "3bed": 1094,
+   "4plusbed": 1255
+  },
+  "Offaly": {
+   "all": 1198,
+   "1bed": 863,
+   "2bed": 1107,
+   "3bed": 1253,
+   "4plusbed": 1482
+  },
+  "Banagher, Offaly": {
+   "all": 924
+  },
+  "Birr, Offaly": {
+   "all": 1034,
+   "2bed": 977,
+   "3bed": 1069
+  },
+  "Clara, Offaly": {
+   "all": 1104
+  },
+  "Edenderry, Offaly": {
+   "all": 1270,
+   "2bed": 1225
+  },
+  "Tullamore, Offaly": {
+   "all": 1317,
+   "1bed": 902,
+   "2bed": 1190,
+   "3bed": 1375,
+   "4plusbed": 1612
+  },
+  "Roscommon": {
+   "all": 1092,
+   "1bed": 776,
+   "2bed": 1006,
+   "3bed": 1143,
+   "4plusbed": 1241
+  },
+  "Roscommon Town": {
+   "all": 1097,
+   "1bed": 742,
+   "2bed": 962,
+   "3bed": 1174,
+   "4plusbed": 1400
+  },
+  "Athlone, Roscommon": {
+   "all": 1487,
+   "2bed": 1475,
+   "3bed": 1558,
+   "4plusbed": 1439
+  },
+  "Ballaghaderreen, Roscommon": {
+   "all": 777,
+   "3bed": 824
+  },
+  "Boyle, Roscommon": {
+   "all": 966,
+   "3bed": 1073
+  },
+  "Castlerea, Roscommon": {
+   "all": 949,
+   "2bed": 914,
+   "3bed": 1014
+  },
+  "Sligo": {
+   "all": 1156,
+   "1bed": 833,
+   "2bed": 1032,
+   "3bed": 1169,
+   "4plusbed": 1483
+  },
+  "Sligo Town": {
+   "all": 1131,
+   "1bed": 826,
+   "2bed": 1044,
+   "3bed": 1182,
+   "4plusbed": 1601
+  },
+  "Ballinode, Sligo": {
+   "all": 1554,
+   "3bed": 1263
+  },
+  "Ballisodare, Sligo": {
+   "all": 1182,
+   "2bed": 1183
+  },
+  "Ballymote, Sligo": {
+   "all": 1000
+  },
+  "Collooney, Sligo": {
+   "all": 1148
+  },
+  "Strandhill, Sligo": {
+   "all": 1310
+  },
+  "Tubbercurry, Sligo": {
+   "all": 1160,
+   "3bed": 1217
+  },
+  "Tipperary": {
+   "all": 1078,
+   "1bed": 733,
+   "2bed": 990,
+   "3bed": 1143,
+   "4plusbed": 1372
+  },
+  "Tipperary Town": {
+   "all": 931,
+   "2bed": 923,
+   "3bed": 987
+  },
+  "Ballina, Tipperary": {
+   "all": 1465,
+   "3bed": 1289
+  },
+  "Cahir, Tipperary": {
+   "all": 948,
+   "3bed": 1047
+  },
+  "Carrick-On-Suir, Tipperary": {
+   "all": 1063,
+   "2bed": 932,
+   "3bed": 1253
+  },
+  "Cashel, Tipperary": {
+   "all": 1094,
+   "2bed": 987,
+   "3bed": 1180
+  },
+  "Clonmel, Tipperary": {
+   "all": 1166,
+   "1bed": 754,
+   "2bed": 1053,
+   "3bed": 1271,
+   "4plusbed": 1652
+  },
+  "Fethard, Tipperary": {
+   "all": 946
+  },
+  "Nenagh, Tipperary": {
+   "all": 1098,
+   "1bed": 739,
+   "2bed": 1019,
+   "3bed": 1137,
+   "4plusbed": 1356
+  },
+  "Roscrea, Tipperary": {
+   "all": 825,
+   "2bed": 877,
+   "3bed": 823
+  },
+  "Templemore, Tipperary": {
+   "all": 969
+  },
+  "Thurles, Tipperary": {
+   "all": 1047,
+   "2bed": 976,
+   "3bed": 1071,
+   "4plusbed": 1287
+  },
+  "Waterford": {
+   "all": 1247,
+   "1bed": 923,
+   "2bed": 1109,
+   "3bed": 1275,
+   "4plusbed": 1720
+  },
+  "Waterford City": {
+   "all": 1316,
+   "1bed": 915,
+   "2bed": 1179,
+   "3bed": 1332,
+   "4plusbed": 1929
+  },
+  "Dungarvan, Waterford": {
+   "all": 1219,
+   "2bed": 1120,
+   "3bed": 1241
+  },
+  "Dunmore East, Waterford": {
+   "all": 1507
+  },
+  "Dunmore Road, Waterford": {
+   "all": 1424
+  },
+  "Inner Ring Road, Waterford": {
+   "all": 1305,
+   "3bed": 1281
+  },
+  "Johns Hill, Waterford": {
+   "all": 984
+  },
+  "Templars Hall, Waterford": {
+   "all": 1770,
+   "3bed": 1347,
+   "4plusbed": 2418
+  },
+  "Tramore, Waterford": {
+   "all": 1267,
+   "2bed": 1195,
+   "3bed": 1245
+  },
+  "Westmeath": {
+   "all": 1257,
+   "1bed": 910,
+   "2bed": 1185,
+   "3bed": 1327,
+   "4plusbed": 1590
+  },
+  "Athlone, Westmeath": {
+   "all": 1315,
+   "1bed": 1028,
+   "2bed": 1218,
+   "3bed": 1457,
+   "4plusbed": 1672
+  },
+  "Castlepollard, Westmeath": {
+   "all": 1049
+  },
+  "Kinnegad, Westmeath": {
+   "all": 1290
+  },
+  "Moate, Westmeath": {
+   "all": 1208,
+   "2bed": 1142
+  },
+  "Mullingar, Westmeath": {
+   "all": 1216,
+   "1bed": 783,
+   "2bed": 1166,
+   "3bed": 1312,
+   "4plusbed": 1479
+  },
+  "Wexford": {
+   "all": 1179,
+   "1bed": 904,
+   "2bed": 1097,
+   "3bed": 1254,
+   "4plusbed": 1468
+  },
+  "Bunclody, Wexford": {
+   "all": 1005
+  },
+  "Enniscorthy, Wexford": {
+   "all": 1079,
+   "2bed": 1009,
+   "3bed": 1156
+  },
+  "Ferns, Wexford": {
+   "all": 1109
+  },
+  "Gorey, Wexford": {
+   "all": 1374,
+   "2bed": 1169,
+   "3bed": 1441,
+   "4plusbed": 1724
+  },
+  "Mulgannon, Wexford": {
+   "all": 1304
+  },
+  "New Ross, Wexford": {
+   "all": 1111,
+   "1bed": 909,
+   "2bed": 1130,
+   "3bed": 1167
+  },
+  "Rosslare, Wexford": {
+   "all": 1211,
+   "3bed": 1251
+  },
+  "Wicklow": {
+   "all": 1730,
+   "1bed": 1193,
+   "2bed": 1726,
+   "3bed": 1904,
+   "4plusbed": 2299
+  },
+  "Wicklow Town": {
+   "all": 1633,
+   "1bed": 1092,
+   "2bed": 1638,
+   "3bed": 1707
+  },
+  "Arklow, Wicklow": {
+   "all": 1359,
+   "1bed": 908,
+   "2bed": 1305,
+   "3bed": 1484,
+   "4plusbed": 1615
+  },
+  "Baltinglass, Wicklow": {
+   "all": 1498
+  },
+  "Blessington, Wicklow": {
+   "all": 1610,
+   "2bed": 1473
+  },
+  "Bray, Wicklow": {
+   "all": 1617,
+   "1bed": 1159,
+   "2bed": 1713,
+   "3bed": 2094
+  },
+  "Delgany, Wicklow": {
+   "all": 2000,
+   "1bed": 1397,
+   "2bed": 1766
+  },
+  "Greystones, Wicklow": {
+   "all": 2362,
+   "2bed": 2232,
+   "3bed": 2584
+  },
+  "Kilcoole, Wicklow": {
+   "all": 1929
+  },
+  "Newtownmountkennedy, Wicklow": {
+   "all": 1800
+  }
+ },
+ "postal_districts": {
+  "Dublin 1": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "I.F.S.C., Dublin 1",
+    "Parnell Street, Dublin 1",
+    "Spencer Dock, Dublin 1",
+    "Summerhill, Dublin 1"
+   ]
+  },
+  "Dublin 2": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Charlemont Street, Dublin 2",
+    "Pearse Street, Dublin 2",
+    "Tara Street, Dublin 2",
+    "Temple Bar, Dublin 2",
+    "Townsend Street, Dublin 2"
+   ]
+  },
+  "Dublin 3": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Clonliffe, Dublin 3",
+    "Clontarf, Dublin 3",
+    "Drumcondra, Dublin 3",
+    "East Wall, Dublin 3",
+    "Fairview, Dublin 3",
+    "North Strand, Dublin 3"
+   ]
+  },
+  "Dublin 4": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Ballsbridge, Dublin 4",
+    "Donnybrook, Dublin 4",
+    "Irishtown, Dublin 4",
+    "Merrion, Dublin 4",
+    "Pembroke, Dublin 4",
+    "Ringsend, Dublin 4",
+    "Sandymount, Dublin 4"
+   ]
+  },
+  "Dublin 5": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Artane, Dublin 5",
+    "Killester, Dublin 5",
+    "Raheny, Dublin 5"
+   ]
+  },
+  "Dublin 6": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Harolds Cross, Dublin 6",
+    "Milltown, Dublin 6",
+    "Ranelagh, Dublin 6",
+    "Rathgar, Dublin 6",
+    "Rathmines, Dublin 6"
+   ]
+  },
+  "Dublin 6W": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Templeogue, Dublin 6W",
+    "Terenure, Dublin 6W"
+   ]
+  },
+  "Dublin 7": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Arbour Hill, Dublin 7",
+    "Cabra, Dublin 7",
+    "North Circular Road, Dublin 7",
+    "Smithfield, Dublin 7",
+    "Stoneybatter, Dublin 7"
+   ]
+  },
+  "Dublin 8": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Christchurch, Dublin 8",
+    "Cork Street, Dublin 8",
+    "Inchicore, Dublin 8",
+    "Islandbridge, Dublin 8",
+    "Kilmainham, Dublin 8",
+    "Portobello, Dublin 8",
+    "Rialto, Dublin 8",
+    "South Circular Road, Dublin 8"
+   ]
+  },
+  "Dublin 9": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Ballymun, Dublin 9",
+    "Beaumont, Dublin 9",
+    "Glasnevin, Dublin 9",
+    "Santry, Dublin 9",
+    "Whitehall, Dublin 9"
+   ]
+  },
+  "Dublin 10": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Ballyfermot, Dublin 10",
+    "Cherry Orchard, Dublin 10"
+   ]
+  },
+  "Dublin 11": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Finglas, Dublin 11"
+   ]
+  },
+  "Dublin 12": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Crumlin, Dublin 12",
+    "Drimnagh, Dublin 12",
+    "Kimmage, Dublin 12",
+    "Walkinstown, Dublin 12"
+   ]
+  },
+  "Dublin 13": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Baldoyle, Dublin 13",
+    "Balgriffin, Dublin 13",
+    "Clongriffin, Dublin 13",
+    "Sutton, Dublin 13"
+   ]
+  },
+  "Dublin 14": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Churchtown, Dublin 14",
+    "Clonskeagh, Dublin 14",
+    "Goatstown, Dublin 14"
+   ]
+  },
+  "Dublin 15": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Ashtown, Dublin 15",
+    "Blanchardstown, Dublin 15",
+    "Castleknock, Dublin 15",
+    "Clonee, Dublin 15",
+    "Clonsilla, Dublin 15",
+    "Mulhuddart, Dublin 15",
+    "Ongar, Dublin 15",
+    "Porterstown, Dublin 15",
+    "Royal Canal Park, Dublin 15"
+   ]
+  },
+  "Dublin 16": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Ballinteer, Dublin 16",
+    "Dundrum, Dublin 16",
+    "Knocklyon, Dublin 16",
+    "Rathfarnham, Dublin 16"
+   ]
+  },
+  "Dublin 17": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Malahide Road, Dublin 17"
+   ]
+  },
+  "Dublin 18": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Cabinteely, Dublin 18",
+    "Carrickmines, Dublin 18",
+    "Foxrock, Dublin 18",
+    "Leopardstown, Dublin 18",
+    "Sandyford, Dublin 18",
+    "Stepaside, Dublin 18"
+   ]
+  },
+  "Dublin 20": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Chapelizod, Dublin 20",
+    "Palmerstown, Dublin 20"
+   ]
+  },
+  "Dublin 22": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Clondalkin, Dublin 22"
+   ]
+  },
+  "Dublin 24": {
+   "district_total_available": false,
+   "fallback": "Dublin",
+   "neighbourhoods": [
+    "Ballycullen, Dublin 24",
+    "Citywest, Dublin 24",
+    "Firhouse, Dublin 24",
+    "Tallaght, Dublin 24"
+   ]
+  }
+ },
+ "aliases": {
+  "D1": "Dublin 1",
+  "D01": "Dublin 1",
+  "Dublin1": "Dublin 1",
+  "Dublin 01": "Dublin 1",
+  "D2": "Dublin 2",
+  "D02": "Dublin 2",
+  "Dublin2": "Dublin 2",
+  "Dublin 02": "Dublin 2",
+  "D3": "Dublin 3",
+  "D03": "Dublin 3",
+  "Dublin3": "Dublin 3",
+  "Dublin 03": "Dublin 3",
+  "D4": "Dublin 4",
+  "D04": "Dublin 4",
+  "Dublin4": "Dublin 4",
+  "Dublin 04": "Dublin 4",
+  "D5": "Dublin 5",
+  "D05": "Dublin 5",
+  "Dublin5": "Dublin 5",
+  "Dublin 05": "Dublin 5",
+  "D6": "Dublin 6",
+  "D06": "Dublin 6",
+  "Dublin6": "Dublin 6",
+  "Dublin 06": "Dublin 6",
+  "D6W": "Dublin 6W",
+  "Dublin6W": "Dublin 6W",
+  "D7": "Dublin 7",
+  "D07": "Dublin 7",
+  "Dublin7": "Dublin 7",
+  "Dublin 07": "Dublin 7",
+  "D8": "Dublin 8",
+  "D08": "Dublin 8",
+  "Dublin8": "Dublin 8",
+  "Dublin 08": "Dublin 8",
+  "D9": "Dublin 9",
+  "D09": "Dublin 9",
+  "Dublin9": "Dublin 9",
+  "Dublin 09": "Dublin 9",
+  "D10": "Dublin 10",
+  "Dublin10": "Dublin 10",
+  "D11": "Dublin 11",
+  "Dublin11": "Dublin 11",
+  "D12": "Dublin 12",
+  "Dublin12": "Dublin 12",
+  "D13": "Dublin 13",
+  "Dublin13": "Dublin 13",
+  "D14": "Dublin 14",
+  "Dublin14": "Dublin 14",
+  "D15": "Dublin 15",
+  "Dublin15": "Dublin 15",
+  "D16": "Dublin 16",
+  "Dublin16": "Dublin 16",
+  "D17": "Dublin 17",
+  "Dublin17": "Dublin 17",
+  "D18": "Dublin 18",
+  "Dublin18": "Dublin 18",
+  "D20": "Dublin 20",
+  "Dublin20": "Dublin 20",
+  "D22": "Dublin 22",
+  "Dublin22": "Dublin 22",
+  "D24": "Dublin 24",
+  "Dublin24": "Dublin 24",
+  "Co. Carlow": "Carlow",
+  "Co Carlow": "Carlow",
+  "County Carlow": "Carlow",
+  "Co. Cavan": "Cavan",
+  "Co Cavan": "Cavan",
+  "County Cavan": "Cavan",
+  "Co. Clare": "Clare",
+  "Co Clare": "Clare",
+  "County Clare": "Clare",
+  "Co. Cork": "Cork",
+  "Co Cork": "Cork",
+  "County Cork": "Cork",
+  "Co. Donegal": "Donegal",
+  "Co Donegal": "Donegal",
+  "County Donegal": "Donegal",
+  "Co. Dublin": "Dublin",
+  "Co Dublin": "Dublin",
+  "County Dublin": "Dublin",
+  "Co. Galway": "Galway",
+  "Co Galway": "Galway",
+  "County Galway": "Galway",
+  "Co. Kerry": "Kerry",
+  "Co Kerry": "Kerry",
+  "County Kerry": "Kerry",
+  "Co. Kildare": "Kildare",
+  "Co Kildare": "Kildare",
+  "County Kildare": "Kildare",
+  "Co. Kilkenny": "Kilkenny",
+  "Co Kilkenny": "Kilkenny",
+  "County Kilkenny": "Kilkenny",
+  "Co. Laois": "Laois",
+  "Co Laois": "Laois",
+  "County Laois": "Laois",
+  "Co. Leitrim": "Leitrim",
+  "Co Leitrim": "Leitrim",
+  "County Leitrim": "Leitrim",
+  "Co. Limerick": "Limerick",
+  "Co Limerick": "Limerick",
+  "County Limerick": "Limerick",
+  "Co. Longford": "Longford",
+  "Co Longford": "Longford",
+  "County Longford": "Longford",
+  "Co. Louth": "Louth",
+  "Co Louth": "Louth",
+  "County Louth": "Louth",
+  "Co. Mayo": "Mayo",
+  "Co Mayo": "Mayo",
+  "County Mayo": "Mayo",
+  "Co. Meath": "Meath",
+  "Co Meath": "Meath",
+  "County Meath": "Meath",
+  "Co. Monaghan": "Monaghan",
+  "Co Monaghan": "Monaghan",
+  "County Monaghan": "Monaghan",
+  "Co. Offaly": "Offaly",
+  "Co Offaly": "Offaly",
+  "County Offaly": "Offaly",
+  "Co. Roscommon": "Roscommon",
+  "Co Roscommon": "Roscommon",
+  "County Roscommon": "Roscommon",
+  "Co. Sligo": "Sligo",
+  "Co Sligo": "Sligo",
+  "County Sligo": "Sligo",
+  "Co. Tipperary": "Tipperary",
+  "Co Tipperary": "Tipperary",
+  "County Tipperary": "Tipperary",
+  "Co. Waterford": "Waterford",
+  "Co Waterford": "Waterford",
+  "County Waterford": "Waterford",
+  "Co. Westmeath": "Westmeath",
+  "Co Westmeath": "Westmeath",
+  "County Westmeath": "Westmeath",
+  "Co. Wexford": "Wexford",
+  "Co Wexford": "Wexford",
+  "County Wexford": "Wexford",
+  "Co. Wicklow": "Wicklow",
+  "Co Wicklow": "Wicklow",
+  "County Wicklow": "Wicklow",
+  "Tullow": "Tullow, Carlow",
+  "Bailieborough": "Bailieborough, Cavan",
+  "Ballyconnell": "Ballyconnell, Cavan",
+  "Ballyjamesduff": "Ballyjamesduff, Cavan",
+  "Belturbet": "Belturbet, Cavan",
+  "Cootehill": "Cootehill, Cavan",
+  "Kingscourt": "Kingscourt, Cavan",
+  "Virginia": "Virginia, Cavan",
+  "Ennis": "Ennis, Clare",
+  "Killaloe": "Killaloe, Clare",
+  "Kilrush": "Kilrush, Clare",
+  "Newmarket-On-Fergus": "Newmarket-On-Fergus, Clare",
+  "Shannon": "Shannon, Clare",
+  "Sixmilebridge": "Sixmilebridge, Clare",
+  "Ballincollig": "Ballincollig, Cork",
+  "Ballintemple": "Ballintemple, Cork",
+  "Bandon": "Bandon, Cork",
+  "Bantry": "Bantry, Cork",
+  "Bishopstown": "Bishopstown, Cork",
+  "Blackpool": "Blackpool, Cork",
+  "Blarney": "Blarney, Cork",
+  "Carrigaline": "Carrigaline, Cork",
+  "Carrigtwohill": "Carrigtwohill, Cork",
+  "Charleville": "Charleville, Cork",
+  "Clonakilty": "Clonakilty, Cork",
+  "Cloyne": "Cloyne, Cork",
+  "Cobh": "Cobh, Cork",
+  "Crosshaven": "Crosshaven, Cork",
+  "Dunmanway": "Dunmanway, Cork",
+  "Fermoy": "Fermoy, Cork",
+  "Glanmire": "Glanmire, Cork",
+  "Kanturk": "Kanturk, Cork",
+  "Kinsale": "Kinsale, Cork",
+  "Macroom": "Macroom, Cork",
+  "Mallow": "Mallow, Cork",
+  "Midleton": "Midleton, Cork",
+  "Mitchelstown": "Mitchelstown, Cork",
+  "Passage West": "Passage West, Cork",
+  "Skibbereen": "Skibbereen, Cork",
+  "Youghal": "Youghal, Cork",
+  "Ballybofey": "Ballybofey, Donegal",
+  "Buncrana": "Buncrana, Donegal",
+  "Bundoran": "Bundoran, Donegal",
+  "Carndonagh": "Carndonagh, Donegal",
+  "Letterkenny": "Letterkenny, Donegal",
+  "Lifford": "Lifford, Donegal",
+  "Stranorlar": "Stranorlar, Donegal",
+  "Balbriggan": "Balbriggan, Dublin",
+  "Booterstown": "Booterstown, Dublin",
+  "Dalkey": "Dalkey, Dublin",
+  "Donabate": "Donabate, Dublin",
+  "Dun Laoghaire": "Dun Laoghaire, Dublin",
+  "Glenageary": "Glenageary, Dublin",
+  "Howth": "Howth, Dublin",
+  "Killiney": "Killiney, Dublin",
+  "Kinsealy": "Kinsealy, Dublin",
+  "Lucan": "Lucan, Dublin",
+  "Lusk": "Lusk, Dublin",
+  "Malahide": "Malahide, Dublin",
+  "Monkstown": "Monkstown, Dublin",
+  "Mount Merrion": "Mount Merrion, Dublin",
+  "Portmarnock": "Portmarnock, Dublin",
+  "Rathcoole": "Rathcoole, Dublin",
+  "Rush": "Rush, Dublin",
+  "Saggart": "Saggart, Dublin",
+  "Sandycove": "Sandycove, Dublin",
+  "Shankill": "Shankill, Dublin",
+  "Skerries": "Skerries, Dublin",
+  "Stillorgan": "Stillorgan, Dublin",
+  "Swords": "Swords, Dublin",
+  "I.F.S.C.": "I.F.S.C., Dublin 1",
+  "Parnell Street": "Parnell Street, Dublin 1",
+  "Spencer Dock": "Spencer Dock, Dublin 1",
+  "Summerhill": "Summerhill, Dublin 1",
+  "Charlemont Street": "Charlemont Street, Dublin 2",
+  "Pearse Street": "Pearse Street, Dublin 2",
+  "Tara Street": "Tara Street, Dublin 2",
+  "Temple Bar": "Temple Bar, Dublin 2",
+  "Townsend Street": "Townsend Street, Dublin 2",
+  "Clonliffe": "Clonliffe, Dublin 3",
+  "Clontarf": "Clontarf, Dublin 3",
+  "East Wall": "East Wall, Dublin 3",
+  "Fairview": "Fairview, Dublin 3",
+  "North Strand": "North Strand, Dublin 3",
+  "Ballsbridge": "Ballsbridge, Dublin 4",
+  "Donnybrook": "Donnybrook, Dublin 4",
+  "Irishtown": "Irishtown, Dublin 4",
+  "Merrion": "Merrion, Dublin 4",
+  "Pembroke": "Pembroke, Dublin 4",
+  "Ringsend": "Ringsend, Dublin 4",
+  "Sandymount": "Sandymount, Dublin 4",
+  "Artane": "Artane, Dublin 5",
+  "Killester": "Killester, Dublin 5",
+  "Raheny": "Raheny, Dublin 5",
+  "Milltown": "Milltown, Dublin 6",
+  "Ranelagh": "Ranelagh, Dublin 6",
+  "Rathgar": "Rathgar, Dublin 6",
+  "Rathmines": "Rathmines, Dublin 6",
+  "Templeogue": "Templeogue, Dublin 6W",
+  "Arbour Hill": "Arbour Hill, Dublin 7",
+  "Cabra": "Cabra, Dublin 7",
+  "North Circular Road": "North Circular Road, Dublin 7",
+  "Smithfield": "Smithfield, Dublin 7",
+  "Stoneybatter": "Stoneybatter, Dublin 7",
+  "Christchurch": "Christchurch, Dublin 8",
+  "Cork Street": "Cork Street, Dublin 8",
+  "Inchicore": "Inchicore, Dublin 8",
+  "Islandbridge": "Islandbridge, Dublin 8",
+  "Kilmainham": "Kilmainham, Dublin 8",
+  "Portobello": "Portobello, Dublin 8",
+  "Rialto": "Rialto, Dublin 8",
+  "South Circular Road": "South Circular Road, Dublin 8",
+  "Beaumont": "Beaumont, Dublin 9",
+  "Santry": "Santry, Dublin 9",
+  "Whitehall": "Whitehall, Dublin 9",
+  "Ballyfermot": "Ballyfermot, Dublin 10",
+  "Cherry Orchard": "Cherry Orchard, Dublin 10",
+  "Finglas": "Finglas, Dublin 11",
+  "Crumlin": "Crumlin, Dublin 12",
+  "Drimnagh": "Drimnagh, Dublin 12",
+  "Kimmage": "Kimmage, Dublin 12",
+  "Walkinstown": "Walkinstown, Dublin 12",
+  "Baldoyle": "Baldoyle, Dublin 13",
+  "Balgriffin": "Balgriffin, Dublin 13",
+  "Clongriffin": "Clongriffin, Dublin 13",
+  "Sutton": "Sutton, Dublin 13",
+  "Churchtown": "Churchtown, Dublin 14",
+  "Clonskeagh": "Clonskeagh, Dublin 14",
+  "Goatstown": "Goatstown, Dublin 14",
+  "Ashtown": "Ashtown, Dublin 15",
+  "Blanchardstown": "Blanchardstown, Dublin 15",
+  "Castleknock": "Castleknock, Dublin 15",
+  "Clonsilla": "Clonsilla, Dublin 15",
+  "Mulhuddart": "Mulhuddart, Dublin 15",
+  "Ongar": "Ongar, Dublin 15",
+  "Porterstown": "Porterstown, Dublin 15",
+  "Royal Canal Park": "Royal Canal Park, Dublin 15",
+  "Ballinteer": "Ballinteer, Dublin 16",
+  "Knocklyon": "Knocklyon, Dublin 16",
+  "Malahide Road": "Malahide Road, Dublin 17",
+  "Carrickmines": "Carrickmines, Dublin 18",
+  "Foxrock": "Foxrock, Dublin 18",
+  "Leopardstown": "Leopardstown, Dublin 18",
+  "Chapelizod": "Chapelizod, Dublin 20",
+  "Palmerstown": "Palmerstown, Dublin 20",
+  "Clondalkin": "Clondalkin, Dublin 22",
+  "Ballycullen": "Ballycullen, Dublin 24",
+  "Firhouse": "Firhouse, Dublin 24",
+  "Tallaght": "Tallaght, Dublin 24",
+  "Athenry": "Athenry, Galway",
+  "Ballinasloe": "Ballinasloe, Galway",
+  "Ballybane": "Ballybane, Galway",
+  "Barna": "Barna, Galway",
+  "Bohermore": "Bohermore, Galway",
+  "Claregalway": "Claregalway, Galway",
+  "Clifden": "Clifden, Galway",
+  "Doughiska": "Doughiska, Galway",
+  "Gort": "Gort, Galway",
+  "Headford": "Headford, Galway",
+  "Loughrea": "Loughrea, Galway",
+  "Moycullen": "Moycullen, Galway",
+  "Oranmore": "Oranmore, Galway",
+  "Oughterard": "Oughterard, Galway",
+  "Portumna": "Portumna, Galway",
+  "Tuam": "Tuam, Galway",
+  "Castleisland": "Castleisland, Kerry",
+  "Dingle": "Dingle, Kerry",
+  "Kenmare": "Kenmare, Kerry",
+  "Killarney": "Killarney, Kerry",
+  "Killorglin": "Killorglin, Kerry",
+  "Listowel": "Listowel, Kerry",
+  "Tralee": "Tralee, Kerry",
+  "Athy": "Athy, Kildare",
+  "Celbridge": "Celbridge, Kildare",
+  "Clane": "Clane, Kildare",
+  "Kilcock": "Kilcock, Kildare",
+  "Kilcullen": "Kilcullen, Kildare",
+  "Kill": "Kill, Kildare",
+  "Leixlip": "Leixlip, Kildare",
+  "Maynooth": "Maynooth, Kildare",
+  "Monasterevin": "Monasterevin, Kildare",
+  "Naas": "Naas, Kildare",
+  "Newbridge": "Newbridge, Kildare",
+  "Rathangan": "Rathangan, Kildare",
+  "Sallins": "Sallins, Kildare",
+  "Callan": "Callan, Kilkenny",
+  "Thomastown": "Thomastown, Kilkenny",
+  "Mountmellick": "Mountmellick, Laois",
+  "Mountrath": "Mountrath, Laois",
+  "Portarlington": "Portarlington, Laois",
+  "Portlaoise": "Portlaoise, Laois",
+  "Carrick-On-Shannon": "Carrick-On-Shannon, Leitrim",
+  "Manorhamilton": "Manorhamilton, Leitrim",
+  "Abbeyfeale": "Abbeyfeale, Limerick",
+  "Annacotty": "Annacotty, Limerick",
+  "Castleconnell": "Castleconnell, Limerick",
+  "Castletroy": "Castletroy, Limerick",
+  "Corbally": "Corbally, Limerick",
+  "Dock Road": "Dock Road, Limerick",
+  "Dooradoyle": "Dooradoyle, Limerick",
+  "Kilmallock": "Kilmallock, Limerick",
+  "Newcastle West": "Newcastle West, Limerick",
+  "Raheen": "Raheen, Limerick",
+  "Ballymahon": "Ballymahon, Longford",
+  "Edgeworthstown": "Edgeworthstown, Longford",
+  "Ardee": "Ardee, Louth",
+  "Dundalk": "Dundalk, Louth",
+  "Ballinrobe": "Ballinrobe, Mayo",
+  "Ballyhaunis": "Ballyhaunis, Mayo",
+  "Belmullet": "Belmullet, Mayo",
+  "Castlebar": "Castlebar, Mayo",
+  "Charlestown": "Charlestown, Mayo",
+  "Claremorris": "Claremorris, Mayo",
+  "Foxford": "Foxford, Mayo",
+  "Swinford": "Swinford, Mayo",
+  "Westport": "Westport, Mayo",
+  "Ashbourne": "Ashbourne, Meath",
+  "Athboy": "Athboy, Meath",
+  "Bettystown": "Bettystown, Meath",
+  "Duleek": "Duleek, Meath",
+  "Dunboyne": "Dunboyne, Meath",
+  "Dunshaughlin": "Dunshaughlin, Meath",
+  "Enfield": "Enfield, Meath",
+  "Navan": "Navan, Meath",
+  "Ratoath": "Ratoath, Meath",
+  "Trim": "Trim, Meath",
+  "Ballybay": "Ballybay, Monaghan",
+  "Carrickmacross": "Carrickmacross, Monaghan",
+  "Castleblayney": "Castleblayney, Monaghan",
+  "Banagher": "Banagher, Offaly",
+  "Birr": "Birr, Offaly",
+  "Clara": "Clara, Offaly",
+  "Edenderry": "Edenderry, Offaly",
+  "Tullamore": "Tullamore, Offaly",
+  "Ballaghaderreen": "Ballaghaderreen, Roscommon",
+  "Boyle": "Boyle, Roscommon",
+  "Castlerea": "Castlerea, Roscommon",
+  "Ballinode": "Ballinode, Sligo",
+  "Ballisodare": "Ballisodare, Sligo",
+  "Ballymote": "Ballymote, Sligo",
+  "Collooney": "Collooney, Sligo",
+  "Strandhill": "Strandhill, Sligo",
+  "Tubbercurry": "Tubbercurry, Sligo",
+  "Cahir": "Cahir, Tipperary",
+  "Carrick-On-Suir": "Carrick-On-Suir, Tipperary",
+  "Cashel": "Cashel, Tipperary",
+  "Clonmel": "Clonmel, Tipperary",
+  "Fethard": "Fethard, Tipperary",
+  "Nenagh": "Nenagh, Tipperary",
+  "Roscrea": "Roscrea, Tipperary",
+  "Templemore": "Templemore, Tipperary",
+  "Thurles": "Thurles, Tipperary",
+  "Dungarvan": "Dungarvan, Waterford",
+  "Dunmore East": "Dunmore East, Waterford",
+  "Dunmore Road": "Dunmore Road, Waterford",
+  "Inner Ring Road": "Inner Ring Road, Waterford",
+  "Johns Hill": "Johns Hill, Waterford",
+  "Templars Hall": "Templars Hall, Waterford",
+  "Tramore": "Tramore, Waterford",
+  "Castlepollard": "Castlepollard, Westmeath",
+  "Kinnegad": "Kinnegad, Westmeath",
+  "Moate": "Moate, Westmeath",
+  "Mullingar": "Mullingar, Westmeath",
+  "Bunclody": "Bunclody, Wexford",
+  "Enniscorthy": "Enniscorthy, Wexford",
+  "Ferns": "Ferns, Wexford",
+  "Gorey": "Gorey, Wexford",
+  "Mulgannon": "Mulgannon, Wexford",
+  "New Ross": "New Ross, Wexford",
+  "Rosslare": "Rosslare, Wexford",
+  "Arklow": "Arklow, Wicklow",
+  "Baltinglass": "Baltinglass, Wicklow",
+  "Blessington": "Blessington, Wicklow",
+  "Bray": "Bray, Wicklow",
+  "Delgany": "Delgany, Wicklow",
+  "Greystones": "Greystones, Wicklow",
+  "Kilcoole": "Kilcoole, Wicklow",
+  "Newtownmountkennedy": "Newtownmountkennedy, Wicklow"
+ }
+}
