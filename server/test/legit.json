@@ -1,0 +1,9 @@
+{
+  "title": "2-bed apartment, Rathmines",
+  "description": "Bright two bedroom apartment on the second floor, close to the Luas. Unfurnished, gas central heating, bike storage. Viewings Tuesday and Thursday evenings with the letting agent. Lease of 12 months, references and RTB registration provided. Deposit equal to one month's rent, paid on signing the lease.",
+  "monthly_rent_eur": 2300,
+  "area": "Rathmines, Dublin 6",
+  "bedrooms": 2,
+  "contact": { "phone": "+353 00 000 0011", "email": "lettings@example.com", "iban": "IE00 TEST 0000 0000 0000 11" },
+  "viewing_offered": true
+}
