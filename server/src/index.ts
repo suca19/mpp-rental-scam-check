@@ -78,8 +78,14 @@ async function readJson(c: { req: { json: () => Promise<unknown> } }): Promise<u
   }
 }
 
-/** Validates the listing BEFORE the payment middleware, so malformed requests never get charged. */
+/** Validates the listing BEFORE the payment middleware, so malformed requests never get charged.
+ *  Without a payment credential nothing can be charged, so we skip validation and let the payment
+ *  middleware answer 402 with the price tag, even for an empty body (the hackathon submit scanner
+ *  calls paid routes without paying and expects 402). With a credential, an invalid body gets 400
+ *  BEFORE the payment is verified or settled, so it is still never charged. (Changed 10 Nov.) */
 const validateListing: MiddlewareHandler<Env> = async (c, next) => {
+  const hasCredential = /^Payment\s/i.test(c.req.header('authorization') ?? '')
+  if (!hasCredential && c.req.path.startsWith('/check')) return next()
   const body = await readJson(c)
   if (body === undefined) return c.json({ error: 'Body must be JSON (Content-Type: application/json)' }, 400)
   const parsed = ListingSchema.safeParse(body)
