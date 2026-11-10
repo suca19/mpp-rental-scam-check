@@ -1,0 +1,16 @@
+402 Payment Required -> paying $0.01 on Tempo testnet...
+
+Listing: listings/subtle-scam.json
+Risk:    HIGH  86/100
+Rent:    vs RTB 2025 average for 2bed in Rathmines, Dublin 6: EUR 2023 (-28%)
+Signals:
+  high   No in-person viewing is offered.  [CCPC rental scam advice]
+  high   Landlord claims to be abroad or out of the country and cannot show the property.  [Garda accommodation fraud advice]
+  high   Asks for a deposit or first month's rent before you have viewed the property in person.  [Garda accommodation fraud advice]
+  medium Pressure to pay quickly, e.g. a 'one-time offer' or threats that you will lose the property if you delay.  [CCPC rental scam advice]
+  medium Contact only through WhatsApp, Messenger, text, email or social media; no phone call or meeting.  [Garda accommodation fraud advice]
+Advice:  Do not pay a deposit before viewing in person. If in doubt, contact Threshold or report to An Garda Síochána.
+Automated risk signals, not a verdict. Prototype.
+
+Paid $0.01 via tempo (success) in 3676 ms
+Receipt: 0x9d19637462a87fee92d582c687f853ff34958fa0b2df4e59c61d7110fbce83c9  2026-11-09T12:59:59.754Z

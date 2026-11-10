@@ -1,0 +1,10 @@
+HTTP/1.1 402 Payment Required
+cache-control: no-store
+content-type: application/problem+json
+www-authenticate: Payment id="jCljPTnRTLY9zNjfPIJ9hCaBN-d-OA7bg_nltOTga3E", realm="localhost", method="tempo", intent="charge", request="eyJhbW91bnQiOiIxMDAwMCIsImN1cnJlbmN5IjoiMHgyMGMwMDAwMDAwMDAwMDAwMDAwMDAwMDA2YTM3REE1Qzk5Njg3NEJFIiwibWV0aG9kRGV0YWlscyI6eyJjaGFpbklkIjo0MjQzMX0sInJlY2lwaWVudCI6IjB4ZjVBYTIwQjM4MUFBQTc1Mjk4ZDA0MDY3RjAwMTEwMzI4QmQ3RjM2QSJ9", description="Rental listing risk-signal check", expires="2026-11-09T13:04:20.620Z", opaque="eyJfbXBweF9ub25jZSI6IjB4Y2EzMTRmYjQ4YTY4ZDk3ZGFiYTgzZTNjZWFiYjJkNmE2NTkzNTNlMzc1Zjg0Y2Y2ZDkzZTdjM2ExODNjMjhkNiIsIl9tcHB4X3Njb3BlIjoiUE9TVCAvY2hlY2sifQ", Payment id="nCqgjiQ_JnH3vF7vJjRaHZISiDiFDSRVmu3DUPVGPWQ", realm="localhost", method="tempo", intent="charge", request="eyJhbW91bnQiOiIxMDAwMCIsImN1cnJlbmN5IjoiMHgyMGMwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIiwibWV0aG9kRGV0YWlscyI6eyJjaGFpbklkIjo0MjQzMX0sInJlY2lwaWVudCI6IjB4ZjVBYTIwQjM4MUFBQTc1Mjk4ZDA0MDY3RjAwMTEwMzI4QmQ3RjM2QSJ9", description="Rental listing risk-signal check", expires="2026-11-09T13:04:20.622Z", opaque="eyJfbXBweF9ub25jZSI6IjB4ZDg0OTE1ZTZiZDJlY2RlNzVlNWM4NjBmMGI2NTNiZDc4NDU0Njk3OWU0ZTZiNzdkZDM3NjgwYmE2N2U5ZDc3MCIsIl9tcHB4X3Njb3BlIjoiUE9TVCAvY2hlY2sifQ"
+Content-Length: 404
+Date: Mon, 09 Nov 2026 12:59:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"type":"https://paymentauth.org/problems/payment-required","title":"Payment Required","status":402,"detail":"Payment is required (Rental listing risk-signal check).","hint":"Use a supported wallet to pay for this resource using one of the supported payment methods returned in the WWW-Authenticate header. See https://mpp.dev/tools/wallet.md","challengeId":"jCljPTnRTLY9zNjfPIJ9hCaBN-d-OA7bg_nltOTga3E"}

@@ -1,0 +1,12 @@
+402 Payment Required -> paying $0.01 on Tempo testnet...
+
+Listing: listings/legit.json
+Risk:    LOW  0/100
+Rent:    vs RTB 2025 average for 2bed in Drumcondra, Dublin 3: EUR 2020 (-1%)
+Signals:
+  (none)
+Advice:  No strong risk signals found. Still view the property in person and confirm the landlord before paying anything.
+Automated risk signals, not a verdict. Prototype.
+
+Paid $0.01 via tempo (success) in 2470 ms
+Receipt: 0x197c29be3f5d452cfdf394405270c7156327ecfb2fbfb6b0cd7bd544c0896d96  2026-11-09T12:59:48.619Z

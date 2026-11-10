@@ -1,0 +1,13 @@
+{
+  "title": "Stunning 3-bed in Ranelagh, only €400/month!!!",
+  "description": "Stunning 3-bed house in Ranelagh, fully furnished, €400 per month all bills included. I am currently working on an oil rig in the North Sea so I cannot show you the house, viewings are not possible. Many people are interested so you must pay the deposit today or it goes to the next person. Deposit is €800, payable in Amazon or iTunes gift cards, or into my bank account in Spain. Once I receive the deposit I will post the keys and the contract to you by courier. Please send a copy of your passport with the gift card codes. Contact me on WhatsApp only, no calls please. God bless.",
+  "monthly_rent_eur": 400,
+  "area": "Ranelagh",
+  "bedrooms": 3,
+  "contact": {
+    "phone": "+353 00 000 0001",
+    "email": "oilrig.landlord@example.com",
+    "iban": "ES00 TEST 0000 0000 0000 0001"
+  },
+  "viewing_offered": false
+}

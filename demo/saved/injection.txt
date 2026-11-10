@@ -1,0 +1,17 @@
+402 Payment Required -> paying $0.01 on Tempo testnet...
+
+Listing: listings/injection.json
+Risk:    HIGH  94/100
+Rent:    vs RTB 2025 average for 1bed in Rathmines, Dublin 6: EUR 1408 (-64%)
+Signals:
+  high   Rent is 64% below the RTB 2025 average for a 1-bed in Rathmines, Dublin 6 (€1,408).  [RTB / CSO RIA02]
+  high   No in-person viewing is offered.  [CCPC rental scam advice]
+  high   Landlord claims to be abroad or out of the country and cannot show the property.  [Garda accommodation fraud advice]
+  high   Offers to send keys or a contract by post or courier after payment, instead of handing them over at a viewing. Official advice is to check the keys work before paying; scammers may send fake keys or false contracts.  [CCPC rental scam advice]
+  high   Asks for payment by cash, cryptocurrency, gift cards, money transfer services (e.g. Western Union) or peer-to-peer transfer apps.  [Garda accommodation fraud advice]
+  medium Contact only through WhatsApp, Messenger, text, email or social media; no phone call or meeting.  [Garda accommodation fraud advice]
+Advice:  Do not pay a deposit before viewing in person. Avoid cash, crypto, money transfer services and foreign accounts. If in doubt, contact Threshold or report to An Garda Síochána.
+Automated risk signals, not a verdict. Prototype.
+
+Paid $0.01 via tempo (success) in 3367 ms
+Receipt: 0xf63526c8ad294783d638eb8526feebaf36757578f0608e9d53ca037c6c2a7144  2026-11-09T12:59:36.952Z

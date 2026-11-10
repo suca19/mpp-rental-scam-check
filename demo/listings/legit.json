@@ -1,0 +1,12 @@
+{
+  "title": "2-bed apartment, Drumcondra, Dublin 3",
+  "description": "Two-bedroom first-floor apartment in Drumcondra, close to DCU and the city centre bus routes. Double and single bedroom, open-plan kitchen and living room, gas heating, BER C1. Unfurnished, long-term let. Viewings on Saturday from 11am to 1pm at the property; call or email to book a slot. References from a previous landlord and an employer are required. The lease is signed in person with the letting agent, and the tenancy will be registered with the RTB.",
+  "monthly_rent_eur": 2000,
+  "area": "Drumcondra, Dublin 3",
+  "bedrooms": 2,
+  "contact": {
+    "phone": "+353 00 000 0003",
+    "email": "lettings@example.com"
+  },
+  "viewing_offered": true
+}

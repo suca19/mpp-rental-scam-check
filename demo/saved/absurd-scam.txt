@@ -1,0 +1,24 @@
+402 Payment Required -> paying $0.01 on Tempo testnet...
+
+Listing: listings/absurd-scam.json
+Risk:    HIGH  99/100
+Rent:    vs RTB 2025 average for 3bed in Ranelagh, Dublin 6: EUR 3287 (-88%)
+Signals:
+  high   Rent is 88% below the RTB 2025 average for a 3-bed in Ranelagh, Dublin 6 (€3,287).  [RTB / CSO RIA02]
+  high   No in-person viewing is offered.  [CCPC rental scam advice]
+  high   This phone appears in 6 shared scam reports.  [Shared scam reports (this service)]
+  high   This IBAN appears in 6 shared scam reports.  [Shared scam reports (this service)]
+  high   Offers to send keys or a contract by post or courier after payment, instead of handing them over at a viewing. Official advice is to check the keys work before paying; scammers may send fake keys or false contracts.  [CCPC rental scam advice]
+  high   Asks for payment by cash, cryptocurrency, gift cards, money transfer services (e.g. Western Union) or peer-to-peer transfer apps.  [Garda accommodation fraud advice]
+  high   Landlord claims to be abroad or out of the country and cannot show the property.  [Garda accommodation fraud advice]
+  medium Payment account is outside Ireland (IBAN country ES).  [Garda accommodation fraud advice]
+  medium Pressure to pay quickly, e.g. a 'one-time offer' or threats that you will lose the property if you delay.  [CCPC rental scam advice]
+  medium Contact only through WhatsApp, Messenger, text, email or social media; no phone call or meeting.  [Garda accommodation fraud advice]
+  medium Asks for copies of your passport, bank statements or other sensitive documents before the landlord and property are confirmed genuine.  [CCPC rental scam advice]
+  report phone reported 6 time(s) by other users
+  report iban reported 6 time(s) by other users
+Advice:  Do not pay a deposit before viewing in person. These contact details appear in shared scam reports. Avoid cash, crypto, money transfer services and foreign accounts. If in doubt, contact Threshold or report to An Garda Síochána.
+Automated risk signals, not a verdict. Prototype.
+
+Paid $0.01 via tempo (success) in 2950 ms
+Receipt: 0x9216a3b86c198ff173ca669705860fca9e7a3ecb0f2082bcd21d5854f7c696c8  2026-11-09T12:59:24.535Z
