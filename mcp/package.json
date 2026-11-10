@@ -1,0 +1,18 @@
+{
+  "name": "rental-scam-check-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "MCP server: gives an AI agent (e.g. Claude Code) a check_rental_listing tool that pays the Rental Scam Check API via MPP on Tempo testnet",
+  "scripts": {
+    "start": "tsx server.ts",
+    "test": "tsx test-client.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "mppx": "^0.17.6",
+    "tsx": "^4.23.15",
+    "viem": "^2.57.17",
+    "zod": "^4.6.7"
+  }
+}

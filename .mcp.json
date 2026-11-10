@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "rental-scam-check": {
+      "type": "stdio",
+      "command": "mcp/node_modules/.bin/tsx",
+      "args": ["mcp/server.ts"],
+      "env": {
+        "RSC_API_URL": "http://127.0.0.1:3000",
+        "RSC_MAX_PAID_CALLS": "25"
+      }
+    }
+  }
+}
