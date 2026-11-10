@@ -1,0 +1,14 @@
+{
+  "name": "rental-scam-check",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Paid API that AI agents call via MPP (HTTP 402) to check Irish rental listings for scam risk signals",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm ci --prefix server --include=dev",
+    "start": "npm run start --prefix server"
+  }
+}
