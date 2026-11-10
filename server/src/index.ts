@@ -115,6 +115,55 @@ async function runCheck(listing: Listing, opts: { ai: boolean } = { ai: true }):
 
 app.get('/health', (c) => c.json({ ok: true }))
 
+// GET / (added 10 Nov): a small human-readable home page, so the bare URL is not a blank 404.
+app.get('/', (c) => {
+  const base = new URL(c.req.url).origin
+  return c.html(`<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Scam Check — paid API for AI agents</title>
+<style>
+:root{color-scheme:light dark}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#10172A;color:#F4F1EA;line-height:1.5}
+main{max-width:860px;margin:0 auto;padding:40px 20px}
+h1{font-size:2.2rem;margin:0 0 .2em}h2{margin-top:2em;font-size:1.25rem;color:#7FA8F5}
+p.lead{font-size:1.15rem;color:#D4DBE8}
+table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #2A3557;padding:.55em .4em;text-align:left;vertical-align:top}
+code,pre{font-family:ui-monospace,"JetBrains Mono",Menlo,monospace;font-size:.9em}
+pre{background:#1A2340;padding:14px;border-radius:10px;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+a{color:#7FA8F5}.price{color:#F5A54A;font-weight:700;white-space:nowrap}
+.note{color:#B9C3D6;font-size:.95rem}
+</style></head><body><main>
+<h1>Rental Scam Check</h1>
+<p class="lead">A paid API that AI agents call before helping someone send a rental deposit in Ireland. The agent pays per check over the <a href="https://mpp.dev">Machine Payments Protocol</a> (HTTP 402) and gets risk signals backed by official RTB rent data, Garda/CCPC scam patterns and shared scam reports.</p>
+
+<h2>Prices (Tempo testnet, test stablecoins)</h2>
+<table>
+<tr><th>Route</th><th>Price</th><th>What you get</th></tr>
+<tr><td><code>POST /check</code></td><td class="price">0.01</td><td>Full check: RTB rent comparison, scam rules, shared reports + an AI reading of the listing text</td></tr>
+<tr><td><code>POST /check/basic</code></td><td class="price">0.002</td><td>Basic check: the same without the AI step, faster</td></tr>
+</table>
+
+<h2>How an agent pays</h2>
+<ol>
+<li>POST a listing as JSON → <b>402 Payment Required</b> with a <code>WWW-Authenticate: Payment</code> price tag.</li>
+<li>The agent signs the payment with its own wallet and retries with <code>Authorization: Payment …</code>.</li>
+<li><b>200</b> with the result and a <code>Payment-Receipt</code> (its reference is the Tempo transaction).</li>
+</ol>
+<pre>npx mppx ${base}/check -J '{"description":"Landlord abroad, send the deposit today","monthly_rent_eur":400,"area":"Ranelagh","viewing_offered":false}'</pre>
+<p class="note">Try the price tag without paying: <code>curl -i -X POST ${base}/check -H 'content-type: application/json' -d '{"description":"test","monthly_rent_eur":1200,"area":"Galway City"}'</code> → 402.</p>
+
+<h2>For agents and developers</h2>
+<ul>
+<li><a href="${base}/llms.txt">/llms.txt</a>: description and prices for AI agents</li>
+<li><a href="${base}/openapi.json">/openapi.json</a>: OpenAPI with <code>x-payment-info</code> offers</li>
+<li><a href="${base}/health">/health</a>: status</li>
+<li><a href="https://github.com/suca19/mpp-rental-scam-check">Source code on GitHub</a></li>
+</ul>
+
+<p class="note">Automated risk signals, not a verdict. Prototype on Tempo testnet: no real money. Rent data: Residential Tenancies Board (RTB) / CSO table RIA02, 2025, CC BY 4.0.</p>
+</main></body></html>`)
+})
+
 // GET /llms.txt (added 10 Nov, per the hackathon guide): plain-text description for AI agents, with prices.
 app.get('/llms.txt', (c) => {
   const base = new URL(c.req.url).origin
