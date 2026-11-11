@@ -11,6 +11,7 @@ import { z } from 'zod'
 import { backlog, recordCheck, subscribe, type CheckEvent } from './events.js'
 import { detectTextSignals } from './llm.js'
 import { agentAvailable, payAndCheck } from './agent.js'
+import { aiCaller, clientKey, signedVisitor, takeAiBudget, VISITOR_HEADER } from './aiquota.js'
 import { ROOT } from './paths.js'
 import { rateLimit } from './ratelimit.js'
 import { addReport, lookupReports } from './reports.js'
@@ -63,7 +64,10 @@ app.use('*', async (c, next) => {
     : status === 400 ? '❌ bad input (no charge)'
     : ''
   const time = new Date().toLocaleTimeString('en-IE')
-  console.log(`${time}  ${c.req.method} ${c.req.path}${hasProof ? ' [+payment proof]' : ''} → ${status} ${note} (${Date.now() - start} ms)`)
+  const ai = c.get('result')?.llm ? ` ai=${c.get('result')?.llm}` : ''
+  // Public host: a short anonymous visitor tag (salted hash, never the IP) to check that per-visitor limits work.
+  const who = process.env.PUBLIC_DEPLOY === '1' ? ` [visitor ${clientKey(c)}]` : ''
+  console.log(`${time}  ${c.req.method} ${c.req.path}${hasProof ? ' [+payment proof]' : ''} → ${status} ${note}${ai}${who} (${Date.now() - start} ms)`)
 })
 
 const limitBody = bodyLimit({
@@ -112,9 +116,14 @@ const emitPaidEvent = (price: string): MiddlewareHandler<Env> => async (c, next)
   recordCheck(c.get('listing'), result, { amount: Number(price), currency, receipt_ref, demo: false })
 }
 
-/** Full check = rules + RTB + reports + AI text signals. Basic check (ai:false) skips the AI step. */
-async function runCheck(listing: Listing, opts: { ai: boolean } = { ai: true }): Promise<CheckResult> {
+/** Full check = rules + RTB + reports + AI text signals. Basic check (ai:false) skips the AI step.
+ *  With a caller, the AI step first takes one unit of that caller's AI quota (public host only, see aiquota.ts). */
+async function runCheck(listing: Listing, opts: { ai: boolean; caller?: string } = { ai: true }): Promise<CheckResult & { ai_note?: string }> {
   if (!opts.ai) return evaluate(listing, lookupReports(listing.contact), null, 'disabled')
+  if (opts.caller) {
+    const budget = takeAiBudget(opts.caller)
+    if (!budget.ok) return { ...evaluate(listing, lookupReports(listing.contact), null, 'limited'), ai_note: budget.note }
+  }
   const text = [listing.title, listing.description].filter(Boolean).join('\n')
   const llm = await detectTextSignals(text)
   return evaluate(listing, lookupReports(listing.contact), llm.signals, llm.status)
@@ -223,7 +232,7 @@ app.post(
   emitPaidEvent(PRICE),
   chargeCheck,
   async (c) => {
-    const result = await runCheck(c.get('listing'))
+    const result = await runCheck(c.get('listing'), { ai: true, caller: aiCaller(c) })
     c.set('result', result)
     return c.json({ ...result, tier: 'full' })
   },
@@ -279,7 +288,10 @@ app.post('/api/agent-check', limitBody, rateLimit('/api/agent-check', 6, 60_000)
   if (!agentAvailable()) return c.json({ error: 'Demo agent wallet not configured' }, 503)
   const port = Number(process.env.PORT ?? 3000)
   const path = c.req.query('tier') === 'basic' ? '/check/basic' : '/check'
-  const run = await payAndCheck(`http://127.0.0.1:${port}${path}`, JSON.stringify(c.get('listing')))
+  // Forward the visitor's anonymous id (signed), so the AI quota counts per visitor, not per server.
+  const run = await payAndCheck(`http://127.0.0.1:${port}${path}`, JSON.stringify(c.get('listing')), {
+    [VISITOR_HEADER]: signedVisitor(clientKey(c)),
+  })
   return c.json(run, run.ok ? 200 : 502)
 })
 

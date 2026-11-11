@@ -50,6 +50,8 @@ export interface CheckResult {
   reported_matches?: ReportedMatch[]
   advice?: string
   disclaimer?: string
+  /** Set when the public demo skipped the AI step (quota reached). */
+  ai_note?: string
 }
 
 const str = (v: unknown): string => (typeof v === 'string' ? v : typeof v === 'number' ? String(v) : '')
@@ -142,5 +144,6 @@ export function parseCheckResult(raw: unknown): CheckResult | null {
     reported_matches: toMatches(r.reported_matches),
     advice: str(r.advice),
     disclaimer: str(r.disclaimer),
+    ai_note: str(r.ai_note),
   }
 }

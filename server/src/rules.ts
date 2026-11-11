@@ -115,7 +115,7 @@ export interface CheckResult {
   rent_comparison: RentComparison | null
   reported_matches: ReportedMatch[]
   advice: string
-  llm: 'ok' | 'unavailable' | 'disabled'
+  llm: 'ok' | 'unavailable' | 'disabled' | 'limited'
   disclaimer: string
 }
 

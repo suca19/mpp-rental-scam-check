@@ -1,11 +1,11 @@
 // Tiny fixed-window, per-IP rate limiter for the free routes. In-memory, single instance.
 import type { MiddlewareHandler } from 'hono'
-import { getConnInfo } from '@hono/node-server/conninfo'
+import { clientKey } from './aiquota.js'
 
 export function rateLimit(name: string, max: number, windowMs: number): MiddlewareHandler {
   const hits = new Map<string, { count: number; resetAt: number }>()
   return async (c, next) => {
-    const ip = getConnInfo(c).remote.address ?? 'unknown'
+    const ip = clientKey(c) // anonymous per-visitor id (real visitor behind the hosting proxy)
     const now = Date.now()
     let h = hits.get(ip)
     if (!h || h.resetAt <= now) {

@@ -269,6 +269,7 @@ export function TryForm({ onUnavailable }: { onUnavailable: () => void }) {
           <SignalList signals={status.result.signals} />
           <Matches matches={status.result.reported_matches ?? []} />
           {status.result.advice && <p className="advice">{status.result.advice}</p>}
+          {status.result.ai_note && <p className="muted small">ℹ️ {status.result.ai_note}</p>}
         </div>
       )}
     </section>

@@ -169,7 +169,7 @@ function priceFrom(req: unknown) {
 }
 
 /** Runs one real paid check against our own /check (or /check/basic) and records every step. */
-export async function payAndCheck(checkUrl: string, listingJson: string): Promise<AgentRun> {
+export async function payAndCheck(checkUrl: string, listingJson: string, extraHeaders: Record<string, string> = {}): Promise<AgentRun> {
   const steps: AgentStep[] = []
   const exchanges: Exchange[] = []
   if (!client || !account) return { ok: false, steps, exchanges, error: 'Demo agent has no wallet (.env.payer missing)' }
@@ -181,7 +181,7 @@ export async function payAndCheck(checkUrl: string, listingJson: string): Promis
   try {
     res = await client.fetch(checkUrl, {
       method: 'POST',
-      headers: { 'content-type': 'application/json', accept: 'application/json' },
+      headers: { ...extraHeaders, 'content-type': 'application/json', accept: 'application/json' },
       body: listingJson,
     })
     text = await res.text()
