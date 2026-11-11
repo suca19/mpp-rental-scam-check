@@ -8,7 +8,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "npm ci --prefix server --include=dev",
+    "build": "npm ci --prefix server --include=dev && npm ci --prefix web --include=dev && npm run build --prefix web",
     "start": "npm run start --prefix server"
   }
 }

@@ -114,7 +114,12 @@ const recordingFetch: typeof fetch = async (input, init) => {
 // Load the payer key into a private object (not process.env) so nothing else can read it by accident.
 const payerEnv: Record<string, string> = {}
 config({ path: resolve(ROOT, '.env.payer'), processEnv: payerEnv, quiet: true })
-const key = payerEnv.MPPX_PRIVATE_KEY as `0x${string}` | undefined
+// On the public host there is no .env.payer: a SEPARATE testnet-only demo wallet comes from the
+// DEMO_PAYER_KEY variable (added 11 Nov). It is removed from process.env right away so nothing else can read it.
+const demoKey = process.env.DEMO_PAYER_KEY?.trim()
+delete process.env.DEMO_PAYER_KEY
+const rawKey = demoKey || payerEnv.MPPX_PRIVATE_KEY
+const key = (rawKey && /^0x[0-9a-fA-F]{64}$/.test(rawKey) ? rawKey : undefined) as `0x${string}` | undefined
 const account = key ? privateKeyToAccount(key) : null
 const client = account
   ? Mppx.create({

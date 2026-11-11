@@ -1,11 +1,12 @@
 import { config } from 'dotenv'
 import { serve } from '@hono/node-server'
+import { serveStatic } from '@hono/node-server/serve-static'
 import { Hono, type MiddlewareHandler } from 'hono'
 import { bodyLimit } from 'hono/body-limit'
 import { streamSSE } from 'hono/streaming'
 import { Receipt } from 'mppx'
 import { Mppx, discovery, tempo } from 'mppx/hono'
-import { resolve } from 'node:path'
+import { relative, resolve } from 'node:path'
 import { z } from 'zod'
 import { backlog, recordCheck, subscribe, type CheckEvent } from './events.js'
 import { detectTextSignals } from './llm.js'
@@ -121,6 +122,11 @@ async function runCheck(listing: Listing, opts: { ai: boolean } = { ai: true }):
 
 app.get('/health', (c) => c.json({ ok: true }))
 
+// GET /demo/ (added 11 Nov): the React dashboard, built by `npm run build` into web/dist (Vite base /demo/).
+const DASHBOARD_DIR = relative(process.cwd(), resolve(ROOT, 'web/dist')) || '.'
+app.get('/demo', (c) => c.redirect('/demo/'))
+app.use('/demo/*', serveStatic({ root: DASHBOARD_DIR, rewriteRequestPath: (p) => p.replace(/^\/demo/, '') }))
+
 // GET / (added 10 Nov): a small human-readable home page, so the bare URL is not a blank 404.
 app.get('/', (c) => {
   const base = new URL(c.req.url).origin
@@ -141,6 +147,8 @@ a{color:#7FA8F5}.price{color:#F5A54A;font-weight:700;white-space:nowrap}
 </style></head><body><main>
 <h1>Rental Scam Check</h1>
 <p class="lead">A paid API that AI agents call before helping someone send a rental deposit in Ireland. The agent pays per check over the <a href="https://mpp.dev">Machine Payments Protocol</a> (HTTP 402) and gets risk signals backed by official RTB rent data, Garda/CCPC scam patterns and shared scam reports.</p>
+<p><a href="${base}/demo/" style="display:inline-block;background:#F5A54A;color:#10172A;font-weight:700;padding:12px 22px;border-radius:10px;text-decoration:none">▶ Try the live demo dashboard</a></p>
+<p class="note">Fill an example listing, then press “Pay as the agent”: a demo agent pays a real test payment and you see the 402 → payment → receipt steps.</p>
 
 <h2>Prices (Tempo testnet, test stablecoins)</h2>
 <table>
@@ -235,28 +243,40 @@ app.post(
   },
 )
 
-// PUBLIC_DEPLOY=1 (set on the public host, added 10 Nov): listen on all interfaces and switch OFF the two
-// laptop-demo routes below. On the internet, /api/agent-check would let anyone spend the agent wallet and
-// /api/demo-check would give free AI checks. The paid routes /check and /check/basic stay on.
+// PUBLIC_DEPLOY=1 (set on the public host): listen on all interfaces. Since 11 Nov the two dashboard demo
+// routes stay ON in public too, with extra limits:
+//  - /api/demo-check runs RULES ONLY in public (no AI), so strangers cannot spend the Gemini quota.
+//  - /api/agent-check pays with a SEPARATE testnet-only demo wallet (DEMO_PAYER_KEY, never .env.payer)
+//    and has a global hourly cap on top of the per-IP limit.
+// The paid routes /check and /check/basic are unchanged.
 const PUBLIC_DEPLOY = process.env.PUBLIC_DEPLOY === '1'
-const localDemoOnly: MiddlewareHandler<Env> = async (c, next) => {
-  if (PUBLIC_DEPLOY) return c.json({ error: 'Not available on the public deployment. Use the paid POST /check.' }, 404)
+const AGENT_MAX_PER_HOUR = Number(process.env.DEMO_AGENT_MAX_PER_HOUR ?? 20)
+let agentWindow = { start: Date.now(), count: 0 }
+const publicAgentCap: MiddlewareHandler<Env> = async (c, next) => {
+  if (!PUBLIC_DEPLOY) return next()
+  const now = Date.now()
+  if (now - agentWindow.start >= 3_600_000) agentWindow = { start: now, count: 0 }
+  if (agentWindow.count >= AGENT_MAX_PER_HOUR) {
+    c.header('Retry-After', String(Math.ceil((agentWindow.start + 3_600_000 - now) / 1000)))
+    return c.json({ error: `The public demo agent has made its ${AGENT_MAX_PER_HOUR} payments for this hour. Try again later, or pay /check with your own agent.` }, 429)
+  }
+  agentWindow.count += 1
   await next()
 }
 
 // Free demo for the dashboard form (no wallet in the browser). Same logic, rate-limited, marked demo.
-app.post('/api/demo-check', localDemoOnly, limitBody, rateLimit('/api/demo-check', 10, 60_000), validateListing, async (c) => {
+app.post('/api/demo-check', limitBody, rateLimit('/api/demo-check', 10, 60_000), validateListing, async (c) => {
   const listing = c.get('listing')
-  const result = await runCheck(listing)
+  const result = await runCheck(listing, { ai: !PUBLIC_DEPLOY })
   recordCheck(listing, result, { amount: 0, currency: 'none', demo: true })
   return c.json({ ...result, demo: true })
 })
 
-// Dashboard "Pay as the agent" (added 10 Nov): the SERVER acts as the agent with the testnet payer
-// wallet (key never reaches the browser) and pays our own /check through the real MPP flow.
-// The server only listens on 127.0.0.1, and this route is rate-limited (it spends test funds).
-app.post('/api/agent-check', localDemoOnly, limitBody, rateLimit('/api/agent-check', 6, 60_000), validateListing, async (c) => {
-  if (!agentAvailable()) return c.json({ error: 'Demo agent wallet not configured (.env.payer)' }, 503)
+// Dashboard "Pay as the agent" (added 10 Nov): the SERVER acts as the agent with a testnet wallet
+// (key never reaches the browser) and pays our own /check through the real MPP flow.
+// Rate-limited per IP, plus a global hourly cap on the public host (it spends test funds).
+app.post('/api/agent-check', limitBody, rateLimit('/api/agent-check', 6, 60_000), validateListing, publicAgentCap, async (c) => {
+  if (!agentAvailable()) return c.json({ error: 'Demo agent wallet not configured' }, 503)
   const port = Number(process.env.PORT ?? 3000)
   const path = c.req.query('tier') === 'basic' ? '/check/basic' : '/check'
   const run = await payAndCheck(`http://127.0.0.1:${port}${path}`, JSON.stringify(c.get('listing')))
@@ -340,5 +360,5 @@ const port = Number(process.env.PORT ?? 3000)
 // Set HOST=0.0.0.0 to expose it on purpose. On the public host (PUBLIC_DEPLOY=1) it listens on 0.0.0.0.
 const hostname = process.env.HOST ?? (PUBLIC_DEPLOY ? '0.0.0.0' : '127.0.0.1')
 serve({ fetch: app.fetch, port, hostname }, () =>
-  console.log(`rental-scam-check on http://${hostname}:${port}${PUBLIC_DEPLOY ? ' (PUBLIC_DEPLOY: demo routes off)' : ''}`),
+  console.log(`rental-scam-check on http://${hostname}:${port}${PUBLIC_DEPLOY ? ' (PUBLIC_DEPLOY: free demo is rules-only, paid demo capped per hour)' : ''}`),
 )
