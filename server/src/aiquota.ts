@@ -19,15 +19,19 @@ const INTERNAL = randomBytes(32)
 
 /**
  * A short, anonymous id for whoever sent this request.
- * On the public host the request arrives through the hosting proxy, which APPENDS the visitor's IP to
- * X-Forwarded-For. Entries before the last one can be typed in by the client, so only the last one is trusted.
+ * On the public host the request arrives through the hosting proxy, so the socket address is the proxy's.
+ * Railway's docs name X-Real-IP as the client IP header, set by its edge (11 Nov test: the LAST
+ * X-Forwarded-For entry changed on every request, so it is not usable there).
+ * CLIENT_IP_SOURCE picks the source without a code change: x-real-ip (default on the public host),
+ * xff-first, xff-last or socket (default locally).
  */
+const SOURCE = process.env.CLIENT_IP_SOURCE ?? (PUBLIC ? 'x-real-ip' : 'socket')
 export function clientKey(c: Context): string {
-  let ip = getConnInfo(c).remote.address ?? 'unknown'
-  if (PUBLIC) {
-    const last = c.req.header('x-forwarded-for')?.split(',').at(-1)?.trim()
-    if (last) ip = last
-  }
+  let ip: string | undefined
+  if (SOURCE === 'x-real-ip') ip = c.req.header('x-real-ip')?.trim()
+  else if (SOURCE === 'xff-first') ip = c.req.header('x-forwarded-for')?.split(',')[0]?.trim()
+  else if (SOURCE === 'xff-last') ip = c.req.header('x-forwarded-for')?.split(',').at(-1)?.trim()
+  ip ||= getConnInfo(c).remote.address ?? 'unknown'
   return createHash('sha256').update(SALT).update(ip).digest('hex').slice(0, 12)
 }
 
